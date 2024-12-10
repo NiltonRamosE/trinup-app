@@ -6,6 +6,7 @@ import BlogPage from "@/pages/blog";
 import AboutPage from "@/pages/about";
 import NotFoundPage from "@/pages/notFound";
 import LoginPage from "@/pages/login";
+import RegisterPage from "@/pages/register";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route element={<AboutPage />} path="/nosotros" />
       <Route element={<LoginPage />} path="/login" />
       <Route element={<NotFoundPage />} path="*" />
+      <Route element={<RegisterPage />} path="/register" />
     </Routes>
   );
 }

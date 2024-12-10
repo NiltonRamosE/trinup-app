@@ -6,7 +6,7 @@ import { Input, Button, Card, Link, Checkbox } from "@nextui-org/react";
 import { Eye, EyeOff, LogIn } from "lucide-react";
 import DefaultLayout from "@/layouts/default";
 
-export default function LoginPage() {
+export default function RegisterPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isVisible, setIsVisible] = useState(false);
@@ -35,7 +35,7 @@ export default function LoginPage() {
               animate={{ scale: 1 }}
               transition={{ type: "spring", stiffness: 200, damping: 10 }}
             >
-              Bienvenido a TrinUp
+              BienvDAADAD
             </motion.h1>
             <form
               onSubmit={handleSubmit}
@@ -119,7 +119,7 @@ export default function LoginPage() {
                 className="flex items-center justify-between gap-4"
               >
                 ¿No tienes cuenta?
-                <Link href="/register" size="sm" className="text-sm">
+                <Link href="#" size="sm" className="text-sm">
                   ¡Registrate aquí!
                 </Link>
               </motion.div>
