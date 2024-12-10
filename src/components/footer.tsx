@@ -20,14 +20,6 @@ export const Footer = () => {
                 <Link
                     isExternal
                     className="text-current ml-1 text-primary"
-                    href="https://www.linkedin.com/in/ilannestorangelesrodriguez/"
-                    title="LinkedIn"
-                >
-                    Ilan Angeles.
-                </Link>
-                <Link
-                    isExternal
-                    className="text-current ml-1 text-primary"
                     href="https://www.linkedin.com/in/nilton-ramos-encarnacion-0819b433b/"
                     title="LinkedIn"
                 >
