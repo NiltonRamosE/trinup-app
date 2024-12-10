@@ -63,7 +63,7 @@ export const Navbar = () => {
         href="/login"
         variant="flat"
         >
-        Entrar
+        Iniciar Sesión
         </Button>
       </NavbarItem>
       <NavbarItem>

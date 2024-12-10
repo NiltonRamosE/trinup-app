@@ -1,0 +1,25 @@
+import { Input } from "@nextui-org/react";
+import { Empresa } from "@/models/empresa";
+
+interface DatosEmpresaAdicionalProps {
+  data: Empresa;
+  onChange: (newData: Partial<Empresa>) => void;
+}
+
+const DatosEmpresaAdicional: React.FC<DatosEmpresaAdicionalProps> = ({ data, onChange }) => {
+  return (
+    <div>
+      <p className="mb-4 font-semibold">¡Infórmanos de cosas adicionales de tu empresa!</p>
+      <Input
+        label="Número de Sucursales"
+        placeholder="Ingresa el número de sucursales"
+        type="text"
+        value={data.sucursales}
+        onChange={(e) => onChange({ sucursales: e.target.value })}
+        className="w-full mb-4"
+      />
+    </div>
+  );
+};
+
+export default DatosEmpresaAdicional;

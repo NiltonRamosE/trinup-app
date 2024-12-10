@@ -62,7 +62,7 @@ export default function DefaultLayout({
         animate={{
           background: [
             "linear-gradient(to right top, #004d7a, #00bf72)",
-            "linear-gradient(to right top, #008793, #00bf72, #004d7a)",
+            "linear-gradient(to right top, #f6e944, #00bf72, #f6e944)",
           ],
         }}
         transition={{
@@ -74,9 +74,9 @@ export default function DefaultLayout({
 
       {/* Animated background shapes */}
       <div className="fixed inset-0 overflow-hidden z-0">
-        <BackgroundShape className="w-96 h-96 bg-blue-300 dark:bg-blue-400" initialPosition={{ x: "10%", y: "5%" }} />
+        {/*<BackgroundShape className="w-96 h-96 bg-blue-100 dark:bg-yellow-400" initialPosition={{ x: "10%", y: "5%" }} />*/}
         <BackgroundShape className="w-96 h-96 bg-green-300 dark:bg-green-400" initialPosition={{ x: "70%", y: "20%" }} />
-        <BackgroundShape className="w-96 h-96 bg-blue-300 dark:bg-blue-400" initialPosition={{ x: "20%", y: "70%" }} />
+        {/*<BackgroundShape className="w-96 h-96 bg-blue-100 dark:bg-yellow-400" initialPosition={{ x: "20%", y: "70%" }}/> */}
         
         {/* Floating particles */}
         {[...Array(20)].map((_, i) => (

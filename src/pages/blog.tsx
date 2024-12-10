@@ -7,21 +7,21 @@ import { title } from "@/components/primitives";
 const users = [
   {
     name: "Astrid Ariana Verde López",
-    role: "Fundadora & CEO",
+    role: "Chief Executive Officer (CEO)",
     content: "TrinUp es una app donde toda persona merece o puede mejorar su estilo de vida. Ofreciendo ayuda profesional y guías adecuadas de cómo y dónde encontrar alimentos, para que el propio cliente pueda vivir de manera más sostenible.",
     linkedin: "https://linkedin.com/in/",
     email: "astrid@trinup.com"
   },
   {
-    name: "Ilan Angeles Rodríguez",
-    role: "CTO",
+    name: "Nilton Ramos Encarnacion",
+    role: "Chief Technology Officer (CTO)",
     content: "El nombre nace de la unión entre nutrición y superación, teniendo el objetivo de ayudar a mejorar a las personas cada día con alimentación, conocimiento y apoyo profesional.",
     linkedin: "https://www.linkedin.com/in/ilannestorangelesrodriguez/",
     email: "202014026@uns.edu.pe"
   },
   {
     name: "Katherine Lizeth López Areche",
-    role: "CMO",
+    role: "Chief Product Officer (CPO)",
     content: "TrinUp ofrece una plataforma intuitiva y fácil de usar, donde los usuarios pueden encontrar recursos y herramientas para mejorar su bienestar y estilo de vida de manera sostenible.",
     linkedin: "https://linkedin.com/in/",
     email: "katherine@trinup.com"

@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { Input, Button, Card, Link, Checkbox } from "@nextui-org/react";
-import { Eye, EyeOff, LogIn } from 'lucide-react';
+import { Eye, EyeOff, LogIn } from "lucide-react";
 import DefaultLayout from "@/layouts/default";
 
 export default function LoginPage() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [isVisible, setIsVisible] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
 
@@ -17,7 +17,7 @@ export default function LoginPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Aquí iría la lógica de autenticación
-    console.log('Login attempt:', { email, password, rememberMe });
+    console.log("Login attempt:", { email, password, rememberMe });
   };
 
   return (
@@ -28,16 +28,19 @@ export default function LoginPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Card className="bg-white dark:bg-gray-800 shadow-xl py-6 px-6">
-            <motion.h1 
-              className="text-3xl font-bold text-center mb-6 text-trinup-dark dark:text-white"
+          <Card className="bg-white dark:bg-gray-800 shadow-xl py-6 px-12">
+            <motion.h1
+              className="text-3xl font-bold text-center mb-10 text-trinup-dark dark:text-white"
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ type: "spring", stiffness: 200, damping: 10 }}
             >
               Bienvenido a TrinUp
             </motion.h1>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-8 w-full max-w-lg mx-auto"
+            >
               <motion.div
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -50,6 +53,7 @@ export default function LoginPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
+                  className="w-full px-4 py-2"
                 />
               </motion.div>
               <motion.div
@@ -64,6 +68,7 @@ export default function LoginPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
+                  className="w-full px-4 py-2"
                   endContent={
                     <button type="button" onClick={toggleVisibility}>
                       {isVisible ? (
@@ -79,16 +84,19 @@ export default function LoginPage() {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4 }}
-                className="flex items-center justify-between"
+                className="flex items-center justify-between gap-4"
               >
                 <Checkbox
                   isSelected={rememberMe}
                   onValueChange={setRememberMe}
                   size="sm"
+                  className="mr-2"
                 >
                   Recordarme
                 </Checkbox>
-                <Link href="#" size="sm">¿Olvidaste tu contraseña?</Link>
+                <Link href="#" size="sm" className="text-sm">
+                  ¿Olvidaste tu contraseña?
+                </Link>
               </motion.div>
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
@@ -98,11 +106,28 @@ export default function LoginPage() {
                 <Button
                   type="submit"
                   color="primary"
-                  className="w-full"
+                  className="w-full py-3"
                   endContent={<LogIn size={16} />}
                 >
                   Iniciar Sesión
                 </Button>
+              </motion.div>
+              {/* Separador */}
+              <div className="flex items-center justify-center my-4">
+                <div className="border-t border-gray-700 w-full"></div>
+                <span className="px-4 text-gray-500 text-sm">o</span>
+                <div className="border-t border-gray-700 w-full"></div>
+              </div>
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                className="flex items-center justify-between gap-4"
+              >
+                ¿No tienes cuenta?
+                <Link href="/register" size="sm" className="text-sm">
+                  ¡Registrate aquí!
+                </Link>
               </motion.div>
             </form>
           </Card>
