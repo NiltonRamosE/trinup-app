@@ -112,6 +112,12 @@ export default function LoginPage() {
                   Iniciar Sesión
                 </Button>
               </motion.div>
+              {/* Separador */}
+              <div className="flex items-center justify-center my-4">
+                <div className="border-t border-gray-700 w-full"></div>
+                <span className="px-4 text-gray-500 text-sm">o</span>
+                <div className="border-t border-gray-700 w-full"></div>
+              </div>
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
