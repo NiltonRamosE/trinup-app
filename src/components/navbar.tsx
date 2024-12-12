@@ -19,7 +19,7 @@ export const Navbar = () => {
 
   return (
     <NavbarUI
-      className="bg-background/70 backdrop-blur-md fixed top-0 left-0 right-0 z-50"
+      className="bg-background/50 backdrop-blur-md fixed top-0 left-0 right-0 z-50"
       maxWidth="xl"
       onMenuOpenChange={setIsMenuOpen}
     >
@@ -36,7 +36,7 @@ export const Navbar = () => {
           >
             <img
               alt="TrinUp Logo"
-              className="h-8 w-auto"
+              className="h-12 w-auto"
               src="/logo_text_black.png"
             />
           </Link>
@@ -47,7 +47,7 @@ export const Navbar = () => {
         {siteConfig.navItems.map((item) => (
           <NavbarItem key={item.href}>
             <Link
-              className="font-medium transition-colors hover:text-primary"
+              className="mr-16 text-2xl transition-colors hover:text-primary"
               color="foreground"
               href={item.href}
             >
@@ -58,7 +58,7 @@ export const Navbar = () => {
         <NavbarItem>
           <Button
             as={Link}
-            className="font-medium"
+            className="text-lg bg-black text-white"
             color="primary"
             href="/login"
             variant="flat"

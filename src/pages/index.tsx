@@ -17,7 +17,6 @@ export default function IndexPage() {
   return (
     <DefaultLayout>
       <section className="relative min-h-screen overflow-hidden mt-5">
-
         {/* Contenido principal */}
         <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center px-12 pt-10 lg:pt-10 mb-5">
           {/* Columna de texto */}
@@ -28,24 +27,66 @@ export default function IndexPage() {
             className="text-center lg:text-left lg:w-1/2 lg:pr-8"
           >
             <motion.h1
-              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-trinup-dark dark:text-white"
+              className="text-4xl md:text-6xl lg:text-7xl leading-tight text-trinup-dark dark:text-white text-center lg:text-left"
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               transition={{ type: "spring", stiffness: 200, damping: 10 }}
             >
-              Mejora tu vida con{" "}
-              <span className="text-trinup-green">TrinUp</span>
+              {/* Bloques que cambian a inline solo en móvil */}
+              <span className="inline-block sm:block">
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5, duration: 0.8 }}
+                >
+                  “CONOCE TU
+                </motion.span>
+              </span>{" "}
+              <span className="inline-block sm:block">
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6, duration: 0.8 }}
+                >
+                  PRODUCTO IDEAL
+                </motion.span>
+              </span>{" "}
+              <span className="inline-block sm:block">
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7, duration: 0.8 }}
+                >
+                  CON TRINUP”
+                </motion.span>
+              </span>
             </motion.h1>
+
             <motion.p
               className="text-xl md:text-2xl mb-8 text-trinup-dark dark:text-gray-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             >
-              Descubre una vida más saludable y sostenible con ayuda profesional
-              y guías personalizadas.
+              <span className="inline-block sm:block">
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5, duration: 0.8 }}
+                >
+                  Descubre una vida más saludable y sostenible
+                </motion.span>
+              </span>{" "}
+              <span className="inline-block sm:block">
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5, duration: 0.8 }}
+                >
+                  con ayuda profesional y guías personalizadas.
+                </motion.span>
+              </span>{" "}
             </motion.p>
-
             <motion.div
               className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4 mb-12"
               initial={{ opacity: 0, y: 20 }}
@@ -54,53 +95,38 @@ export default function IndexPage() {
             >
               <Button
                 size="lg"
-                color="success"
-                variant="shadow"
-                className="bg-trinup-green text-white hover:bg-trinup-green/80 transition-colors"
-              >
-                Comienza Ahora
-              </Button>
-              <Button
-                size="lg"
                 variant="bordered"
-                className="border-trinup-green text-trinup-green dark:text-trinup-yellow dark:border-trinup-yellow hover:bg-trinup-green/10 transition-colors"
+                className="text-2xl px-24 py-8 border-4 border-trinup-green text-trinup-black dark:text-trinup-yellow dark:border-trinup-yellow hover:bg-trinup-green/10 transition-colors rounded-full"
               >
-                Saber Más
+                <motion.div>COMENCEMOS AHORA</motion.div>
               </Button>
             </motion.div>
           </motion.div>
 
-          {/* Columna de imagen */}
           <motion.div
-            className="lg:w-1/2 mt-2 lg:mt-0"
+            className="relative lg:w-1/2"
             initial={{ opacity: 0, scale: 0.8, x: 50 }}
-            animate={{
-              opacity: isVisible ? 1 : 0,
-              scale: isVisible ? 1 : 0.8,
-              x: isVisible ? 0 : 50,
-            }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            <div className="relative mx-auto w-full max-w-md">
-              <motion.div
-                className="absolute inset-0 bg-trinup-green rounded-full filter blur-3xl opacity-30 dark:opacity-40"
-                animate={{ scale: [1, 1.1, 1], rotate: [0, 5, 0] }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 10,
-                  ease: "easeInOut",
-                }}
-              />
+            <div className="absolute top-[-250px] left-[-10px] w-[175%] h-[140%] transform -rotate-[-2deg] z-0">
               <Image
-                src="/main.png"
-                alt="TrinUp Lifestyle"
-                className="relative z-10 w-full h-auto object-cover rounded-3xl shadow-xl"
+                src="/component_green.png"
+                alt="Fondo Verde"
+                className="w-full h-auto"
+              />
+            </div>
+
+            <div className="relative z-10 mt-[-80px] ">
+              <Image
+                src="/mall.png"
+                alt="Carrito de Compras"
+                className="w-[80%] mx-auto"
               />
             </div>
           </motion.div>
         </div>
-
-        {/* Sección de características */}
+        {/* 
         <motion.div
           className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4 pb-6"
           initial={{ opacity: 0, y: 50 }}
@@ -143,7 +169,7 @@ export default function IndexPage() {
               </p>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div>*/}
       </section>
 
       <motion.section
