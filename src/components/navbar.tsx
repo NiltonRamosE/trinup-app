@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { useScroll } from "react-use";
 import {
   Navbar as NavbarUI,
   NavbarBrand,
@@ -16,10 +17,14 @@ import { siteConfig } from "@/config/site";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const ref = useRef(null);
+  const { y } = useScroll(ref);
+  const isScrolled = y > 0;
   return (
     <NavbarUI
-      className="bg-background/50 backdrop-blur-md fixed top-0 left-0 right-0 z-50"
+      className={`fixed top-0 left-0 right-0 z-50 pt-4 transition-colors ${
+        isScrolled ? "navbar-transparent" : "navbar-transparent"
+      }`}
       maxWidth="xl"
       onMenuOpenChange={setIsMenuOpen}
     >
@@ -36,7 +41,7 @@ export const Navbar = () => {
           >
             <img
               alt="TrinUp Logo"
-              className="h-12 w-auto"
+              className="w-auto lg:h-10 h-10 sm:h-8 lg:ml-10"
               src="/logo_text_black.png"
             />
           </Link>
@@ -47,7 +52,7 @@ export const Navbar = () => {
         {siteConfig.navItems.map((item) => (
           <NavbarItem key={item.href}>
             <Link
-              className="mr-16 text-2xl transition-colors hover:text-primary"
+              className="lg:mr-10 mr-10 sm:mr-4 font-bold text-lg transition-colors hover:text-primary"
               color="foreground"
               href={item.href}
             >
@@ -58,7 +63,7 @@ export const Navbar = () => {
         <NavbarItem>
           <Button
             as={Link}
-            className="text-lg bg-black text-white"
+            className="font-bold text-xs bg-black text-white"
             color="primary"
             href="/login"
             variant="flat"
@@ -66,7 +71,7 @@ export const Navbar = () => {
             Iniciar Sesión
           </Button>
         </NavbarItem>
-        <NavbarItem>
+        <NavbarItem className="ml-10">
           <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>

@@ -1,47 +1,7 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-
-const BackgroundShape = ({ className, initialPosition }: { className?: string; initialPosition: { x: string; y: string } }) => (
-  <motion.div
-    className={`absolute rounded-full mix-blend-multiply filter blur-xl opacity-70 ${className}`}
-    initial={initialPosition}
-    animate={{
-      scale: [1, 1.2, 1],
-      rotate: [0, 180, 360],
-      x: [initialPosition.x, `calc(${initialPosition.x} + 10%)`, initialPosition.x],
-      y: [initialPosition.y, `calc(${initialPosition.y} + 10%)`, initialPosition.y],
-    }}
-    transition={{
-      duration: 20,
-      ease: "easeInOut",
-      repeat: Infinity,
-      repeatType: "reverse",
-    }}
-  />
-);
-
-const FloatingParticle = ({ size, color, initialPosition }: { size: number; color: string; initialPosition: { x: number; y: number } }) => (
-  <motion.div
-    className={`absolute rounded-full ${color}`}
-    style={{
-      width: size,
-      height: size,
-    }}
-    initial={initialPosition}
-    animate={{
-      x: [initialPosition.x, initialPosition.x + Math.random() * 100 - 50],
-      y: [initialPosition.y, initialPosition.y + Math.random() * 100 - 50],
-    }}
-    transition={{
-      duration: 3 + Math.random() * 2,
-      repeat: Infinity,
-      repeatType: "reverse",
-      ease: "easeInOut",
-    }}
-  />
-);
 
 export default function DefaultLayout({
   children,

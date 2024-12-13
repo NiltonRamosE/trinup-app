@@ -16,10 +16,8 @@ export default function IndexPage() {
 
   return (
     <DefaultLayout>
-      <section className="relative min-h-screen overflow-hidden mt-5">
-        {/* Contenido principal */}
+      <section className="relative min-h-screen overflow-visible mt-5">
         <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center px-12 pt-10 lg:pt-10 mb-5">
-          {/* Columna de texto */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -50 }}
@@ -27,13 +25,12 @@ export default function IndexPage() {
             className="text-center lg:text-left lg:w-1/2 lg:pr-8"
           >
             <motion.h1
-              className="text-4xl md:text-6xl lg:text-7xl leading-tight text-trinup-dark dark:text-white text-center lg:text-left"
+              className="font-bold text-3xl md:text-5xl lg:text-5xl lg:text-left lg:mt-20 leading-tight text-trinup-dark dark:text-white text-center"
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               transition={{ type: "spring", stiffness: 200, damping: 10 }}
             >
-              {/* Bloques que cambian a inline solo en móvil */}
-              <span className="inline-block sm:block">
+              <span className="inline-block hidden lg:block mb-6">
                 <motion.span
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -42,7 +39,7 @@ export default function IndexPage() {
                   “CONOCE TU
                 </motion.span>
               </span>{" "}
-              <span className="inline-block sm:block">
+              <span className="inline-block hidden lg:block mb-6">
                 <motion.span
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -51,7 +48,7 @@ export default function IndexPage() {
                   PRODUCTO IDEAL
                 </motion.span>
               </span>{" "}
-              <span className="inline-block sm:block">
+              <span className="inline-block hidden lg:block mb-6">
                 <motion.span
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -60,15 +57,24 @@ export default function IndexPage() {
                   CON TRINUP”
                 </motion.span>
               </span>
+              <span className="block lg:hidden mb-6">
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7, duration: 0.8 }}
+                >
+                  "CONOCE TU PRODUCTO IDEAL CON TRINUP”
+                </motion.span>
+              </span>
             </motion.h1>
 
             <motion.p
-              className="text-xl md:text-2xl mb-8 text-trinup-dark dark:text-gray-300"
+              className="font-semibold text-base md:text-xl lg:text-lg mb-8 text-trinup-dark dark:text-gray-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             >
-              <span className="inline-block sm:block">
+              <span className="inline-block">
                 <motion.span
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -77,7 +83,7 @@ export default function IndexPage() {
                   Descubre una vida más saludable y sostenible
                 </motion.span>
               </span>{" "}
-              <span className="inline-block sm:block">
+              <span className="inline-block">
                 <motion.span
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -96,7 +102,7 @@ export default function IndexPage() {
               <Button
                 size="lg"
                 variant="bordered"
-                className="text-2xl px-24 py-8 border-4 border-trinup-green text-trinup-black dark:text-trinup-yellow dark:border-trinup-yellow hover:bg-trinup-green/10 transition-colors rounded-full"
+                className="font-bold text-base md:text-base lg:text-base lg:mt-6 px-12 py-8 border-4 border-trinup-green text-trinup-black dark:text-trinup-yellow dark:border-trinup-yellow hover:bg-trinup-green/10 transition-colors rounded-full"
               >
                 <motion.div>COMENCEMOS AHORA</motion.div>
               </Button>
@@ -109,7 +115,7 @@ export default function IndexPage() {
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            <div className="absolute top-[-250px] left-[-10px] w-[175%] h-[140%] transform -rotate-[-2deg] z-0">
+            <div className="absolute top-[-15px] sm:top-[-175px] md:top-[-230px] left-[-40px] w-[180%] sm:w-[200%] md:w-[210%] h-[140%] transform -rotate-[1deg] z-0 ">
               <Image
                 src="/component_green.png"
                 alt="Fondo Verde"
@@ -118,15 +124,63 @@ export default function IndexPage() {
             </div>
 
             <div className="relative z-10 mt-[-80px] ">
+              <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 w-[40vw] h-[20vh] bg-black/30 rounded-full blur-lg"></div>
               <Image
                 src="/mall.png"
                 alt="Carrito de Compras"
-                className="w-[80%] mx-auto"
+                className="mx-auto mt-20 sm:mt-0"
               />
             </div>
           </motion.div>
         </div>
-        {/* 
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="relative flex flex-col items-center justify-center gap-8 md:py-16 px-4"
+        >
+          {/* Título */}
+          <motion.div
+            className="relative bg-black text-white py-2 px-4 rounded-full text-center z-10 mb-8 mt-16"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+          >
+            <h5 className="text-lg md:text-xl py-1 px-12">NUESTROS PARTNERS</h5>
+          </motion.div>
+          <motion.div
+            className="relative top-[-90px] z-0 flex flex-wrap justify-center items-center gap-10 lg:gap-60 w-[135%] sm:w-[200%] bg-trinup-green-light py-4 overflow-visible"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+          >
+            <div className="flex flex-col items-center justify-center w-32 h-32 md:w-36 md:h-36">
+              <img
+                src="nutriavo.png"
+                alt="NutriAvo"
+                className="w-[90%] h-full object-contain"
+              />
+            </div>
+
+            <div className="flex flex-col items-center justify-center w-32 h-32 md:w-36 md:h-36">
+              <img
+                src="vitalmash.png"
+                alt="VitalMash"
+                className="w-[60%] h-full object-contain"
+              />
+            </div>
+
+            <div className="flex flex-col items-center justify-center w-32 h-32 md:w-36 md:h-36">
+              <img
+                src="sklit.png"
+                alt="Sklit"
+                className="w-[100%] h-full object-contain"
+              />
+            </div>
+          </motion.div>
+        </motion.section>
+        
+
         <motion.div
           className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4 pb-6"
           initial={{ opacity: 0, y: 50 }}
@@ -169,7 +223,7 @@ export default function IndexPage() {
               </p>
             </motion.div>
           ))}
-        </motion.div>*/}
+        </motion.div>
       </section>
 
       <motion.section
