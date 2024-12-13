@@ -17,6 +17,7 @@ export default {
           dark: '#0d181c',
           light: '#f6f6f6',
           yellow: '#f6e944',
+          'green-light': '#20d269',
         },
       },
     },
