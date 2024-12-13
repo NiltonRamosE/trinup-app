@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { useScroll } from "react-use";
 import {
   Navbar as NavbarUI,
   NavbarBrand,
@@ -16,76 +17,80 @@ import { siteConfig } from "@/config/site";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const ref = useRef(null);
+  const { y } = useScroll(ref);
+  const isScrolled = y > 0;
   return (
     <NavbarUI
-      className="bg-background/70 backdrop-blur-md border-b border-divider fixed top-0 left-0 right-0 z-50"
+      className={`fixed top-0 left-0 right-0 z-50 pt-4 transition-colors ${
+        isScrolled ? "navbar-transparent" : "navbar-transparent"
+      }`}
       maxWidth="xl"
       onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent>
-      <NavbarMenuToggle
-      aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-      className="sm:hidden"
-      />
-      <NavbarBrand>
-        <Link
-        className="font-bold text-inherit flex items-center gap-2"
-        color="foreground"
-        href="/"
-        >
-        <img alt="TrinUp Logo" className="h-8 w-auto" src="/logo.png" />
-        <span className="hidden sm:block">TrinUp</span>
-        </Link>
-      </NavbarBrand>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden"
+        />
+        <NavbarBrand>
+          <Link
+            className="font-bold text-inherit flex items-center gap-2"
+            color="foreground"
+            href="/"
+          >
+            <img
+              alt="TrinUp Logo"
+              className="w-auto lg:h-10 h-10 sm:h-8 lg:ml-10"
+              src="/logo_text_black.png"
+            />
+          </Link>
+        </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-      {siteConfig.navItems.map((item) => (
-        <NavbarItem key={item.href}>
-        <Link
-          className="text-sm font-medium transition-colors hover:text-primary"
-          color="foreground"
-          href={item.href}
-        >
-          {item.label}
-        </Link>
+      <NavbarContent className="hidden sm:flex gap-4" justify="end">
+        {siteConfig.navItems.map((item) => (
+          <NavbarItem key={item.href}>
+            <Link
+              className="lg:mr-10 mr-10 sm:mr-4 font-bold text-lg transition-colors hover:text-primary"
+              color="foreground"
+              href={item.href}
+            >
+              {item.label}
+            </Link>
+          </NavbarItem>
+        ))}
+        <NavbarItem>
+          <Button
+            as={Link}
+            className="font-bold text-xs bg-black text-white"
+            color="primary"
+            href="/login"
+            variant="flat"
+          >
+            Iniciar Sesión
+          </Button>
         </NavbarItem>
-      ))}
-      </NavbarContent>
-
-      <NavbarContent justify="end">
-      <NavbarItem>
-        <Button
-        as={Link}
-        className="font-medium"
-        color="primary"
-        href="/login"
-        variant="flat"
-        >
-        Iniciar Sesión
-        </Button>
-      </NavbarItem>
-      <NavbarItem>
-        <ThemeSwitch />
-      </NavbarItem>
+        <NavbarItem className="ml-10">
+          <ThemeSwitch />
+        </NavbarItem>
       </NavbarContent>
 
       <NavbarMenu>
-      <div className="mx-4 mt-2 flex flex-col gap-2">
-        {siteConfig.navItems.map((item, index) => (
-        <NavbarMenuItem key={`${item}-${index}`}>
-          <Link
-          className="w-full"
-          color="foreground"
-          href={item.href}
-          size="lg"
-          >
-          {item.label}
-          </Link>
-        </NavbarMenuItem>
-        ))}
-      </div>
+        <div className="mx-4 mt-2 flex flex-col gap-2">
+          {siteConfig.navItems.map((item, index) => (
+            <NavbarMenuItem key={`${item}-${index}`}>
+              <Link
+                className="w-full"
+                color="foreground"
+                href={item.href}
+                size="lg"
+              >
+                {item.label}
+              </Link>
+            </NavbarMenuItem>
+          ))}
+        </div>
       </NavbarMenu>
     </NavbarUI>
   );
