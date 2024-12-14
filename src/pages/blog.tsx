@@ -8,8 +8,8 @@ const users = [
   {
     name: "Astrid Ariana Verde López",
     role: "Chief Executive Officer (CEO)",
-    content: "TrinUp es una app donde toda persona merece o puede mejorar su estilo de vida. Ofreciendo ayuda profesional y guías adecuadas de cómo y dónde encontrar alimentos, para que el propio cliente pueda vivir de manera más sostenible.",
-    linkedin: "https://linkedin.com/in/",
+    content: "TrinUp es una app donde toda persona puede mejorar su estilo de vida. Ofreciendo guías de cómo y dónde encontrar alimentos, para que el cliente pueda vivir de manera más sostenible.",
+    linkedin: "https://linkedin.com/in/astrid-ariana-verde-lopez-08939929b",
     email: "astrid@trinup.com"
   },
   {
@@ -20,7 +20,7 @@ const users = [
     email: "202014026@uns.edu.pe"
   },
   {
-    name: "Katherine Lizeth López Areche",
+    name: "Katherine López Areche",
     role: "Chief Product Officer (CPO)",
     content: "TrinUp ofrece una plataforma intuitiva y fácil de usar, donde los usuarios pueden encontrar recursos y herramientas para mejorar su bienestar y estilo de vida de manera sostenible.",
     linkedin: "https://linkedin.com/in/",

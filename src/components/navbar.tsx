@@ -42,7 +42,7 @@ export const Navbar = () => {
             <img
               alt="TrinUp Logo"
               className="w-auto lg:h-10 h-10 sm:h-8 lg:ml-10"
-              src="/logo_text_black.png"
+              src="/logo_text_green.png"
             />
           </Link>
         </NavbarBrand>
