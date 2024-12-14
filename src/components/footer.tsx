@@ -18,7 +18,7 @@ export const Footer = () => {
         © {new Date().getFullYear()}
         <Link
           isExternal
-          className="text-current ml-1 text-primary"
+          className="text-current ml-1 text-trinup-green font-extrabold"
           href="https://www.linkedin.com/in/nilton-ramos-encarnacion-0819b433b/"
           title="LinkedIn"
         >

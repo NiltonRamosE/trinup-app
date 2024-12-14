@@ -16,7 +16,7 @@ const DatosPersonales: React.FC<DatosPersonalesProps> = ({ data, onChange }) => 
         type="text"
         value={data.nombre}
         onChange={(e) => onChange({ nombre: e.target.value })}
-        className="w-full mb-4"
+        className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4"
       />
       <Input
         label="Correo electrónico"
@@ -24,7 +24,7 @@ const DatosPersonales: React.FC<DatosPersonalesProps> = ({ data, onChange }) => 
         type="email"
         value={data.email}
         onChange={(e) => onChange({ email: e.target.value })}
-        className="w-full mb-4"
+        className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4"
       />
     </div>
   );

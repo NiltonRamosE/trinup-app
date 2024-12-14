@@ -43,15 +43,15 @@ export default function BlogPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <Card className="p-6 text-center backdrop-blur-sm shadow-2xl max-w-sm mx-auto">
+              <Card className="p-6 text-center backdrop-blur-sm shadow-2xl max-w-sm mx-auto dark:bg-trinup-dark dark:border-2 dark:border-trinup-light">
                 <h2 className="text-2xl font-bold mb-2">{user.name}</h2>
-                <h3 className="text-xl text-gray-700 mb-4">{user.role}</h3>
-                <p className="text-gray-700 mb-4">{user.content}</p>
+                <h3 className="text-xl text-trinup-dark dark:text-trinup-light mb-4">{user.role}</h3>
+                <p className="text-trinup-dark dark:text-trinup-light mb-4">{user.content}</p>
                 <div className="flex justify-center gap-4">
-                  <Link href={user.linkedin} target="_blank" className="text-blue-500 hover:text-blue-700">
+                  <Link href={user.linkedin} target="_blank" className="text-trinup-green hover:text-blue-700">
                     <Linkedin className="w-6 h-6" />
                   </Link>
-                  <Link href={`mailto:${user.email}`} className="text-blue-500 hover:text-blue-700">
+                  <Link href={`mailto:${user.email}`} className="text-trinup-green hover:text-blue-700">
                     <Mail className="w-6 h-6" />
                   </Link>
                 </div>

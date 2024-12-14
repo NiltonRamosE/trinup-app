@@ -102,7 +102,7 @@ const TeamMember = ({ member }: { member: TeamMember }) => {
       whileHover={{ scale: 1.05 }}
       transition={{ type: "spring", stiffness: 300, damping: 10 }}
     >
-      <Card className="max-w-xs">
+      <Card className="max-w-xs dark:bg-trinup-dark dark:border-2 dark:border-trinup-light">
         <CardBody className="overflow-visible p-0">
           <div className="relative w-full h-[150px] flex items-center justify-center ">
             <Avatar
@@ -128,7 +128,7 @@ const TeamMember = ({ member }: { member: TeamMember }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Linkedin className="text-default-500 text-primary" />
+              <Linkedin className="text-trinup-green text-primary" />
             </Button>
             <Button
               isIconOnly
@@ -137,7 +137,7 @@ const TeamMember = ({ member }: { member: TeamMember }) => {
               as="a"
               href={`mailto:${member.email}`}
             >
-              <Mail className="text-default-500 text-primary" />
+              <Mail className="text-trinup-green text-primary" />
             </Button>
           </div>
         </CardFooter>
@@ -156,7 +156,7 @@ export default function AboutPage() {
         className="flex flex-col items-center justify-center gap-8 py-12 md:py-16 px-4"
       >
         <motion.h1
-          className="text-4xl md:text-5xl font-bold text-center text-trinup-dark "
+          className="text-4xl md:text-5xl font-bold text-center text-trinup-dark dark:text-trinup-light"
           initial={{ scale: 0.9 }}
           animate={{ scale: 1 }}
           transition={{ type: "spring", stiffness: 200, damping: 10 }}
@@ -164,7 +164,7 @@ export default function AboutPage() {
           Conoce al Equipo TrinUp
         </motion.h1>
         <motion.p
-          className="text-xl text-center text-gray-600 max-w-3xl mb-8"
+          className="text-xl text-center text-trinup-dark dark:text-trinup-light max-w-3xl mb-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
