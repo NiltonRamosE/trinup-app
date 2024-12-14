@@ -1,36 +1,36 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Heart, MessageCircle, Share2, Bookmark } from 'lucide-react'
-import { Avatar } from "@nextui-org/react"
+import { motion } from "framer-motion";
 
 interface Post {
-  id: number
-  image: string
-  caption: string
-  likes: number
+  id: number;
+  image: string;
+  caption: string;
+  social: string;
 }
 
 const posts: Post[] = [
   {
     id: 1,
-    image: "https://images.pexels.com/photos/6707692/pexels-photo-6707692.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    caption: "La clave no es comer menos, es comer mejor",
-    likes: 124,
+    image: "/post-1.png",
+    caption:
+      "Gran variedad de alimentos funcionales, ¡y todo adaptado a mis necesidades",
+    social: "/instagram.png",
   },
   {
     id: 2,
-    image: "https://images.pexels.com/photos/6072381/pexels-photo-6072381.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    caption: "Transformarse es posible cuando sabes cómo",
-    likes: 89,
+    image: "/post-2.png",
+    caption:
+      "Una plataforma que te cuida. Productos saludables y de calidad en minutos",
+    social: "/instagram.png",
   },
   {
     id: 3,
-    image: "https://images.pexels.com/photos/6544496/pexels-photo-6544496.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    caption: "Escucha a tu cuerpo, déjanos ayudarte a entenderlo",
-    likes: 156,
+    image: "/post-3.png",
+    caption: "Productos saludables y de calidad en solo minutos. ¡Que genial!",
+    social: "/facebook.png",
   },
-]
+];
 
 const SocialPost = ({ post }: { post: Post }) => {
   return (
@@ -38,78 +38,29 @@ const SocialPost = ({ post }: { post: Post }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg mb-6 max-w-md mx-auto"
+      className="bg-white rounded-lg overflow-hidden shadow-lg max-w-sm mx-auto flex flex-col p-4 relative"
     >
-      {/* Header */}
-      <div className="flex items-center p-4">
-        <Avatar
-            src="/logo.png"
-            alt="TrinUp Logo"
-            size="md"
-            className="mr-2"
+      <div className="flex items-center space-x-2 mb-16">
+        <img
+          src={post.social}
+          alt="Red Social"
+          className="absolute top-0 left-0 w-[80px] h-[80px] object-contain"
         />
-        <span className="ml-3 font-semibold">TrinUp_Oficial</span>
-        <button className="ml-auto">
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            •••
-          </motion.div>
-        </button>
+      </div>
+      <div className="flex items-center space-x-2 mb-4">
+        <p className="text-gray-500 font-semibold text-sm">{post.caption}</p>
       </div>
 
-      {/* Image */}
       <div className="relative">
         <img
           src={post.image}
           alt={post.caption}
-          className="w-full h-auto"
+          className="w-full h-auto object-cover rounded-lg"
         />
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-6">
-          <p className="text-white text-xl font-bold">{post.caption}</p>
-        </div>
-      </div>
-
-      {/* Actions */}
-      <div className="p-4">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center space-x-4">
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="text-[#25d367] hover:text-[#25d367]/80"
-            >
-              <Heart className="h-6 w-6" />
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="text-[#25d367] hover:text-[#25d367]/80"
-            >
-              <MessageCircle className="h-6 w-6" />
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="text-[#25d367] hover:text-[#25d367]/80"
-            >
-              <Share2 className="h-6 w-6" />
-            </motion.button>
-          </div>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="text-[#25d367] hover:text-[#25d367]/80"
-          >
-            <Bookmark className="h-6 w-6" />
-          </motion.button>
-        </div>
-        <p className="font-semibold">{post.likes} likes</p>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
 export default function SocialFeed() {
   return (
@@ -118,12 +69,68 @@ export default function SocialFeed() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="flex flex-wrap gap-8 overflow-x-auto lg:flex-row lg:flex-nowrap flex-col"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="bg-white rounded-lg shadow-lg mx-auto p-4 flex flex-col space-y-4 relative"
+        >
+          <img
+            src="/facebook.png"
+            alt="Red Social"
+            className="absolute top-0 left-0 w-[80px] h-[80px] object-contain"
+          />
+
+          <div className="pl-16 pr-4">
+            <p className="text-gray-900 font-semibold text-base leading-relaxed">
+              TRINUP hace que cuidar mi salud sea accesible y sencillo. <br />
+              <span className="font-bold">¡Totalmente recomendado!</span>
+            </p>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="bg-white rounded-lg shadow-lg mx-auto p-4 flex flex-col space-y-4 relative"
+        >
+          <img
+            src="/facebook.png"
+            alt="Red Social"
+            className="absolute top-0 left-0 w-[80px] h-[80px] object-contain"
+          />
+
+          <div className="pl-16 pr-4">
+            <p className="text-gray-900 font-semibold text-base leading-relaxed">
+              TRINUP es la forma más fácil de comer saludable! <br />
+              <span className="font-bold">
+                Productos frescos y adaptados a mí
+              </span>
+            </p>
+          </div>
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10"
       >
         {posts.map((post) => (
           <SocialPost key={post.id} post={post} />
         ))}
       </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="flex items-center justify-center mt-10"
+      >
+        <img src="/fondo-black.png" alt="Red Social" className="w-[70%]" />
+      </motion.div>
     </div>
-  )
+  );
 }
