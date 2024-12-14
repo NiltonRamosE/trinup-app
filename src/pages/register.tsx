@@ -20,6 +20,10 @@ export default function RegisterPage() {
   const [clienteData, setClienteData] = useState<Cliente>({
     nombre: "",
     email: "",
+    apellidoPaterno: "",
+    apellidoMaterno: "",
+    password: "",
+    passwordConfirm: "",
     peso: "",
     talla: "",
   });
@@ -54,14 +58,18 @@ export default function RegisterPage() {
         return (
           <DatosPersonales
             data={clienteData}
-            onChange={(newData) => setClienteData({ ...clienteData, ...newData })}
+            onChangeClient={(newData) =>
+              setClienteData({ ...clienteData, ...newData })
+            }
           />
         );
       } else if (activeTab === "empresa") {
         return (
           <DatosEmpresa
             data={empresaData}
-            onChange={(newData) => setEmpresaData({ ...empresaData, ...newData })}
+            onChangeOrg={(newData) =>
+              setEmpresaData({ ...empresaData, ...newData })
+            }
           />
         );
       }
@@ -70,14 +78,18 @@ export default function RegisterPage() {
         return (
           <DatosSalud
             data={clienteData}
-            onChange={(newData) => setClienteData({ ...clienteData, ...newData })}
+            onChangeClient={(newData) =>
+              setClienteData({ ...clienteData, ...newData })
+            }
           />
         );
       } else if (activeTab === "empresa") {
         return (
           <DatosEmpresaAdicional
             data={empresaData}
-            onChange={(newData) => setEmpresaData({ ...empresaData, ...newData })}
+            onChangeOrg={(newData) =>
+              setEmpresaData({ ...empresaData, ...newData })
+            }
           />
         );
       }
