@@ -104,7 +104,7 @@ export default function IndexPage() {
               <Button
                 size="lg"
                 variant="bordered"
-                className="font-bold text-base md:text-base lg:text-base lg:mt-6 px-12 py-8 border-4 border-trinup-green text-trinup-black dark:text-trinup-yellow dark:border-trinup-yellow hover:bg-trinup-green/10 transition-colors rounded-full"
+                className="font-bold text-base md:text-base lg:text-base lg:mt-6 px-12 py-8 border-4 border-trinup-green text-trinup-black dark:text-trinup-light dark:border-trinup-light hover:bg-trinup-green/10 transition-colors rounded-full"
               >
                 <motion.div>COMENCEMOS AHORA</motion.div>
               </Button>
@@ -143,12 +143,12 @@ export default function IndexPage() {
         >
           {/* Título */}
           <motion.div
-            className="relative bg-black text-white py-2 px-4 rounded-full text-center z-10 mb-8 mt-16"
+            className="relative bg-black text-white py-2 px-4 rounded-full text-center z-10 mb-8 mt-16 dark:bg-trinup-light"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            <h5 className="text-lg md:text-xl py-1 px-12">NUESTROS PARTNERS</h5>
+            <h5 className="text-lg md:text-xl py-1 px-12 dark:text-trinup-dark font-extrabold">NUESTROS PARTNERS</h5>
           </motion.div>
           <motion.div
             className="relative top-[-90px] z-0 flex flex-wrap justify-center items-center gap-10 lg:gap-60 w-[135%] sm:w-[200%] bg-trinup-green-light py-4 overflow-visible"
@@ -207,7 +207,7 @@ export default function IndexPage() {
           ].map((item, index) => (
             <motion.div
               key={index}
-              className="flex flex-col items-center py-6 px-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg"
+              className="flex flex-col items-center py-6 px-2 bg-white dark:bg-trinup-dark dark:border-2 dark:border-trinup-light rounded-lg shadow-lg"
               whileHover={{
                 scale: 1.05,
                 boxShadow:

@@ -16,7 +16,7 @@ const DatosSalud: React.FC<DatosSaludProps> = ({ data, onChange }) => {
         type="text"
         value={data.peso}
         onChange={(e) => onChange({ peso: e.target.value })}
-        className="w-full mb-4"
+        className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4"
       />
       <Input
         label="Talla"
@@ -24,7 +24,7 @@ const DatosSalud: React.FC<DatosSaludProps> = ({ data, onChange }) => {
         type="text"
         value={data.talla}
         onChange={(e) => onChange({ talla: e.target.value })}
-        className="w-full mb-4"
+        className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4"
       />
     </div>
   );
