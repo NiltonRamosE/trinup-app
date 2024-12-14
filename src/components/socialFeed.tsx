@@ -129,7 +129,7 @@ export default function SocialFeed() {
         transition={{ duration: 0.5 }}
         className="flex items-center justify-center mt-10"
       >
-        <img src="/fondo-black.png" alt="Red Social" className="w-[70%]" />
+        <img src="/fondo-black.png" alt="Red Social" className=" w-[100%] lg:w-[70%]" />
       </motion.div>
     </div>
   );
