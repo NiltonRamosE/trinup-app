@@ -259,12 +259,12 @@ export default function IndexPage() {
       >
         {/* Título */}
         <motion.div
-          className="relative bg-black text-white py-2 px-4 rounded-full text-center z-10 mb-8 mt-16 font-bold"
+          className="relative bg-black text-white py-2 px-4 rounded-full text-center z-10 mb-8 mt-16 font-bold dark:bg-trinup-light"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          <h5 className="text-lg md:text-xl py-1 px-12">Ponte en Contacto</h5>
+          <h5 className="text-lg md:text-xl py-1 px-12 dark:text-trinup-dark font-extrabold">Ponte en Contacto</h5>
         </motion.div>
 
         {/* Fondo verde con texto centrado */}
