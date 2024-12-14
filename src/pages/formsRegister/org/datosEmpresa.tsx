@@ -1,5 +1,6 @@
-import { Input } from "@nextui-org/react";
+import { Input, Checkbox } from "@nextui-org/react";
 import { Empresa } from "@/models/empresa";
+import { useState } from "react";
 
 interface DatosEmpresaProps {
   data: Empresa;
@@ -7,6 +8,13 @@ interface DatosEmpresaProps {
 }
 
 const DatosEmpresa: React.FC<DatosEmpresaProps> = ({ data, onChange }) => {
+  const [selectedPago, setSelectedPago] = useState<string | null>();
+
+  const handlePagoChange = (value: string) => {
+    setSelectedPago(selectedPago === value ? null : value);
+    onChange({ pago: selectedPago === value ? null : value }); // Actualiza el estado externo con el valor seleccionado
+  };
+
   return (
     <div>
       <p className="mb-4 font-semibold">Datos empresariales:</p>
@@ -16,7 +24,7 @@ const DatosEmpresa: React.FC<DatosEmpresaProps> = ({ data, onChange }) => {
         type="text"
         value={data.ruc}
         onChange={(e) => onChange({ ruc: e.target.value })}
-        className="w-full mb-4"
+        className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4"
       />
       <Input
         label="Razón Social"
@@ -24,29 +32,31 @@ const DatosEmpresa: React.FC<DatosEmpresaProps> = ({ data, onChange }) => {
         type="text"
         value={data.razonSocial}
         onChange={(e) => onChange({ razonSocial: e.target.value })}
-        className="w-full mb-4"
+        className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4"
       />
       <div className="flex items-center gap-4 mt-4">
-        <label className="font-medium">¿Desea pagar la suscripción?</label>
+        <label className="font-medium text-xs">
+          ¿Desea pagar la suscripción?
+        </label>
         <div className="flex items-center gap-2">
-          <input
-            type="radio"
-            name="pago"
-            id="si"
-            value="si"
-            checked={data.pago === "si"}
-            onChange={() => onChange({ pago: "si" })}
-          />
-          <label htmlFor="si">Sí</label>
-          <input
-            type="radio"
-            name="pago"
-            id="no"
-            value="no"
-            checked={data.pago === "no"}
-            onChange={() => onChange({ pago: "no" })}
-          />
-          <label htmlFor="no">No</label>
+          <Checkbox
+            size="sm"
+            className="mr-2"
+            color="success"
+            isSelected={selectedPago === "si"}
+            onChange={() => handlePagoChange("si")}
+          >
+            Sí
+          </Checkbox>
+          <Checkbox
+            size="sm"
+            className="mr-2"
+            color="success"
+            isSelected={selectedPago === "no"}
+            onChange={() => handlePagoChange("no")}
+          >
+            No
+          </Checkbox>
         </div>
       </div>
     </div>

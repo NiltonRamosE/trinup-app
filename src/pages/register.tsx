@@ -93,7 +93,7 @@ export default function RegisterPage() {
           transition={{ duration: 0.5 }}
         >
           <motion.div
-            className="bg-white dark:bg-gray-800 shadow-xl py-6 px-12 rounded-lg"
+            className="bg-white dark:bg-trinup-dark dark:border-2 dark:border-trinup-light shadow-xl py-6 px-12 rounded-lg"
             layout
             transition={{
               duration: 0.5,
@@ -117,8 +117,8 @@ export default function RegisterPage() {
                   onClick={() => setActiveTab("cliente")}
                   className={`px-6 py-2 text-sm font-semibold transition-all duration-300 border-2 ${
                     activeTab === "cliente"
-                      ? "bg-yellow-400 text-black border-yellow-400"
-                      : "bg-transparent text-gray-700 dark:text-gray-300 border-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                      ? "bg-trinup-green text-white border-trinup-green font-extrabold"
+                      : "bg-transparent text-gray-700 dark:text-gray-300 border-trinup-green hover:bg-gray-100 dark:hover:bg-gray-800 font-extrabold"
                   } rounded-l-lg`}
                 >
                   Cliente
@@ -127,8 +127,8 @@ export default function RegisterPage() {
                   onClick={() => setActiveTab("empresa")}
                   className={`px-6 py-2 text-sm font-semibold transition-all duration-300 border-2 ${
                     activeTab === "empresa"
-                      ? "bg-yellow-400 text-black border-yellow-400"
-                      : "bg-transparent text-gray-700 dark:text-gray-300 border-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                      ? "bg-trinup-green text-white border-trinup-green font-extrabold"
+                      : "bg-transparent text-gray-700 dark:text-gray-300 border-trinup-green hover:bg-gray-100 dark:hover:bg-gray-800 font-extrabold"
                   } rounded-r-lg`}
                 >
                   Empresa
@@ -148,8 +148,8 @@ export default function RegisterPage() {
                 {formStep > 1 && (
                   <Button
                     onClick={handleBack}
-                    color="secondary"
-                    className="w-1/2 mr-2 py-3"
+                    color="success"
+                    className="w-1/2 mr-2 py-3 bg-trinup-green"
                     startContent={<ArrowLeft size={16} />}
                   >
                     Volver
@@ -158,8 +158,8 @@ export default function RegisterPage() {
                 {formStep === 1 ? (
                   <Button
                     onClick={handleContinue}
-                    color="primary"
-                    className="py-3"
+                    color="success"
+                    className="py-3 bg-trinup-green"
                     endContent={<ArrowRight size={16} />}
                   >
                     Continuar
@@ -167,8 +167,8 @@ export default function RegisterPage() {
                 ) : (
                   <Button
                     onClick={handleFinalizar}
-                    color="primary"
-                    className="w-1/2 ml-2 py-3"
+                    color="success"
+                    className="w-1/2 ml-2 py-3 bg-trinup-green"
                     endContent={<ArrowRight size={16} />}
                   >
                     Finalizar
@@ -186,7 +186,7 @@ export default function RegisterPage() {
                   href="/login"
                   className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 border-2 border-gray-300 rounded-lg hover:bg-gray-300 hover:border-gray-400 dark:text-gray-200 dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700 transition-all duration-300"
                 >
-                  ⬅ Iniciar Sesión
+                  ⬅ Regresar al Inicio de Sesión
                 </Link>
               </motion.div>
             </form>

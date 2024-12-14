@@ -28,7 +28,7 @@ export default function LoginPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Card className="bg-white dark:bg-gray-800 shadow-xl py-6 px-12">
+          <Card className="bg-white dark:bg-trinup-dark dark:border-2 dark:border-trinup-light shadow-xl py-6 px-12">
             <motion.h1
               className="text-3xl font-bold text-center mb-10 text-trinup-dark dark:text-white"
               initial={{ scale: 0.9 }}
@@ -53,7 +53,7 @@ export default function LoginPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full px-4 py-2"
+                  className="w-full border-2 border-trinup-green rounded-xl font-extrabold"
                 />
               </motion.div>
               <motion.div
@@ -68,7 +68,7 @@ export default function LoginPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="w-full px-4 py-2"
+                  className="w-full border-2 border-trinup-green rounded-xl font-extrabold"
                   endContent={
                     <button type="button" onClick={toggleVisibility}>
                       {isVisible ? (
@@ -91,10 +91,11 @@ export default function LoginPage() {
                   onValueChange={setRememberMe}
                   size="sm"
                   className="mr-2"
+                  color="success"
                 >
                   Recordarme
                 </Checkbox>
-                <Link href="#" size="sm" className="text-sm">
+                <Link href="#" size="sm" className="text-sm text-trinup-green">
                   ¿Olvidaste tu contraseña?
                 </Link>
               </motion.div>
@@ -105,8 +106,8 @@ export default function LoginPage() {
               >
                 <Button
                   type="submit"
-                  color="primary"
-                  className="w-full py-3"
+                  color="success"
+                  className="w-full py-3 bg-trinup-green"
                   endContent={<LogIn size={16} />}
                 >
                   Iniciar Sesión
@@ -125,7 +126,7 @@ export default function LoginPage() {
                 className="flex items-center justify-between gap-4"
               >
                 ¿No tienes cuenta?
-                <Link href="/register" size="sm" className="text-sm">
+                <Link href="/register" size="sm" className="text-sm text-trinup-green">
                   ¡Registrate aquí!
                 </Link>
               </motion.div>

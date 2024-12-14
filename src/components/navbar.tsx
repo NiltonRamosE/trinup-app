@@ -63,7 +63,7 @@ export const Navbar = () => {
         <NavbarItem>
           <Button
             as={Link}
-            className="font-bold text-xs bg-black text-white"
+            className="font-black text-xs bg-trinup-dark text-white dark:bg-trinup-light dark:text-trinup-dark"
             color="primary"
             href="/login"
             variant="flat"
@@ -76,6 +76,11 @@ export const Navbar = () => {
         </NavbarItem>
       </NavbarContent>
 
+      <NavbarContent className="block sm:hidden" justify="end">
+        <NavbarItem className="mt-5 ml-24">
+          <ThemeSwitch />
+        </NavbarItem>
+      </NavbarContent>
       <NavbarMenu>
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {siteConfig.navItems.map((item, index) => (
@@ -91,6 +96,17 @@ export const Navbar = () => {
             </NavbarMenuItem>
           ))}
         </div>
+        <NavbarItem>
+          <Button
+            as={Link}
+            className="font-black text-xs bg-trinup-dark text-white dark:bg-trinup-light dark:text-trinup-dark"
+            color="primary"
+            href="/login"
+            variant="flat"
+          >
+            Iniciar Sesión
+          </Button>
+        </NavbarItem>
       </NavbarMenu>
     </NavbarUI>
   );

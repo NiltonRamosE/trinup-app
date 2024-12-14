@@ -28,7 +28,7 @@ export default function ContactForm() {
         transition={{ duration: 0.5 }}
         className="w-full lg:w-1/2"
       >
-        <Card className="p-6 bg-white dark:bg-gray-800">
+        <Card className="p-6 bg-white dark:bg-trinup-dark dark:border-2 dark:border-trinup-light">
           <h2 className="text-2xl font-bold mb-4 text-center">Contáctanos</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input
@@ -36,6 +36,7 @@ export default function ContactForm() {
               placeholder="Tu nombre"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4"
               required
             />
             <Input
@@ -44,6 +45,7 @@ export default function ContactForm() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4"
               required
             />
             <Textarea
@@ -51,11 +53,12 @@ export default function ContactForm() {
               placeholder="¿En qué podemos ayudarte?"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
+              className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4"
               required
             />
             <Button
               type="submit"
-              color="primary"
+              color="success"
               endContent={<Send size={16} />}
               className="w-full"
             >

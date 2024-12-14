@@ -16,7 +16,7 @@ const DatosEmpresaAdicional: React.FC<DatosEmpresaAdicionalProps> = ({ data, onC
         type="text"
         value={data.sucursales}
         onChange={(e) => onChange({ sucursales: e.target.value })}
-        className="w-full mb-4"
+        className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4"
       />
     </div>
   );
