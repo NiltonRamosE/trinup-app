@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@nextui-org/button";
@@ -179,7 +181,6 @@ export default function IndexPage() {
             </div>
           </motion.div>
         </motion.section>
-        
 
         <motion.div
           className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4 pb-6"
@@ -215,10 +216,10 @@ export default function IndexPage() {
               whileTap={{ scale: 0.95 }}
             >
               <item.icon className="w-12 h-12 text-trinup-green mb-4" />
-              <h3 className="text-xl mb-2 text-trinup-dark dark:text-white">
+              <h3 className="text-xl mb-2 text-trinup-dark dark:text-white font-bold">
                 {item.title}
               </h3>
-              <p className="text-center text-gray-600 dark:text-gray-300">
+              <p className="text-center text-gray-600 dark:text-gray-300 font-bold text-sm">
                 {item.description}
               </p>
             </motion.div>
@@ -232,14 +233,21 @@ export default function IndexPage() {
         transition={{ duration: 0.5 }}
         className="flex flex-col items-center justify-center gap-8 py-12 md:py-16 px-4"
       >
-        <motion.h1
-          className="text-4xl md:text-5xl font-bold text-center text-trinup-dark"
-          initial={{ scale: 0.9 }}
-          animate={{ scale: 1 }}
-          transition={{ type: "spring", stiffness: 200, damping: 10 }}
+        <motion.div
+          className="relative z-0 flex flex-wrap justify-center items-center gap-10 lg:gap-60 w-[135%] sm:w-[200%] bg-trinup-green-light py-10 overflow-visible"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
         >
-          Nuestro público
-        </motion.h1>
+          <motion.h1
+            className="text-7xl font-bold text-center text-trinup-light"
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 200, damping: 10 }}
+          >
+            NUESTRO PÚBLICO
+          </motion.h1>
+        </motion.div>
         <SocialFeed />
       </motion.section>
 
@@ -247,26 +255,31 @@ export default function IndexPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="flex flex-col items-center justify-center gap-8 py-12 md:py-16 px-4"
+        className="relative flex flex-col items-center justify-center gap-8 md:py-16 px-4"
       >
-        <motion.h1
-          className="text-4xl md:text-5xl font-bold text-center text-trinup-dark"
-          initial={{ scale: 0.9 }}
-          animate={{ scale: 1 }}
-          transition={{ type: "spring", stiffness: 200, damping: 10 }}
+        {/* Título */}
+        <motion.div
+          className="relative bg-black text-white py-2 px-4 rounded-full text-center z-10 mb-8 mt-16 font-bold"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
         >
-          Ponte en Contacto
-        </motion.h1>
-        <motion.p
-          className="text-xl text-center text-gray-600 max-w-3xl mb-8"
+          <h5 className="text-lg md:text-xl py-1 px-12">Ponte en Contacto</h5>
+        </motion.div>
+
+        {/* Fondo verde con texto centrado */}
+        <motion.div
+          className="relative top-[-90px] z-0 flex justify-center items-center w-[135%] sm:w-[200%] bg-trinup-green-light py-16"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          ¿Tienes preguntas o comentarios? Estamos aquí para ayudarte. Completa
-          el formulario a continuación y nos pondremos en contacto contigo lo
-          antes posible.
-        </motion.p>
+          <motion.p className="text-center font-bold text-xl text-trinup-light px-4 max-w-4xl">
+            ¿Tienes preguntas o comentarios? Estamos aquí para ayudarte.
+            Completa el formulario a continuación y nos pondremos en contacto
+            contigo lo antes posible.
+          </motion.p>
+        </motion.div>
 
         <ContactForm />
       </motion.section>
