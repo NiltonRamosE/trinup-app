@@ -4,15 +4,15 @@ import { useState } from "react";
 
 interface DatosEmpresaProps {
   data: Empresa;
-  onChange: (newData: Partial<Empresa>) => void;
+  onChangeOrg: (newData: Partial<Empresa>) => void;
 }
 
-const DatosEmpresa: React.FC<DatosEmpresaProps> = ({ data, onChange }) => {
+const DatosEmpresa: React.FC<DatosEmpresaProps> = ({ data, onChangeOrg }) => {
   const [selectedPago, setSelectedPago] = useState<string | null>();
 
   const handlePagoChange = (value: string) => {
     setSelectedPago(selectedPago === value ? null : value);
-    onChange({ pago: selectedPago === value ? null : value }); // Actualiza el estado externo con el valor seleccionado
+    onChangeOrg({ pago: selectedPago === value ? null : value });
   };
 
   return (
@@ -23,7 +23,7 @@ const DatosEmpresa: React.FC<DatosEmpresaProps> = ({ data, onChange }) => {
         placeholder="Ingresa tu RUC"
         type="text"
         value={data.ruc}
-        onChange={(e) => onChange({ ruc: e.target.value })}
+        onChange={(e) => onChangeOrg({ ruc: e.target.value })}
         className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4"
       />
       <Input
@@ -31,7 +31,7 @@ const DatosEmpresa: React.FC<DatosEmpresaProps> = ({ data, onChange }) => {
         placeholder="Ingresa la razón social"
         type="text"
         value={data.razonSocial}
-        onChange={(e) => onChange({ razonSocial: e.target.value })}
+        onChange={(e) => onChangeOrg({ razonSocial: e.target.value })}
         className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4"
       />
       <div className="flex items-center gap-4 mt-4">

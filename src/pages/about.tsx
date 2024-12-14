@@ -34,7 +34,7 @@ const teamMembers: TeamMember[] = [
     name: "Sait Anjelo Cabrera Jara",
     role: "Chief Marketing Strategist (CMS)",
     bio: "Desarrolla y ejecuta estrategias de marketing para posicionar la plataforma en el mercado y aumentar la visibilidad de la marca.",
-    linkedin: "https://linkedin.com/in/",
+    linkedin: "https://linkedin.com/in/sait-anjelo-cabrera-jara-a9536532b",
     email: "202014026@uns.edu.pe",
     image:"/main.png"
   },

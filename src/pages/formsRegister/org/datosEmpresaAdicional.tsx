@@ -3,10 +3,10 @@ import { Empresa } from "@/models/empresa";
 
 interface DatosEmpresaAdicionalProps {
   data: Empresa;
-  onChange: (newData: Partial<Empresa>) => void;
+  onChangeOrg: (newData: Partial<Empresa>) => void;
 }
 
-const DatosEmpresaAdicional: React.FC<DatosEmpresaAdicionalProps> = ({ data, onChange }) => {
+const DatosEmpresaAdicional: React.FC<DatosEmpresaAdicionalProps> = ({ data, onChangeOrg }) => {
   return (
     <div>
       <p className="mb-4 font-semibold">¡Infórmanos de cosas adicionales de tu empresa!</p>
@@ -15,7 +15,7 @@ const DatosEmpresaAdicional: React.FC<DatosEmpresaAdicionalProps> = ({ data, onC
         placeholder="Ingresa el número de sucursales"
         type="text"
         value={data.sucursales}
-        onChange={(e) => onChange({ sucursales: e.target.value })}
+        onChange={(e) => onChangeOrg({ sucursales: e.target.value })}
         className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4"
       />
     </div>
