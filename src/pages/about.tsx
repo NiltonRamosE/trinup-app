@@ -17,15 +17,15 @@ const teamMembers: TeamMember[] = [
   {
     name: "Astrid Ariana Verde López",
     role: "Chief Executive Officer (CEO)",
-    bio: "Fundadora y líder visionaria, guía la estrategia general de TRINUP, enfocándose en el crecimiento y la innovación en el sector de alimentos funcionales.",
-    linkedin: "https://linkedin.com/in/",
+    bio: "Fundadora y guía la estrategia general de TRINUP, enfocándose en el crecimiento y la innovación en el sector de alimentos funcionales.",
+    linkedin: "https://linkedin.com/in/astrid-ariana-verde-lopez-08939929b",
     email: "astrid@trinup.com",
-    image:"/main.png"
+    image:"/astridverde.jpg"
   },
   {
     name: "Nilton Ramos Encarnacion",
     role: "Chief Technology Officer (CTO)",
-    bio: "Líder tecnológico de TRINUP, supervisa el desarrollo de la plataforma e integra tecnologías avanzadas como machine learning para una experiencia personalizada.",
+    bio: "Líder tecnológico de TRINUP, supervisa el desarrollo de la plataforma e integra tecnologías avanzadas para una experiencia personalizada.",
     linkedin: "https://www.linkedin.com/in/nilton-ramos-encarnacion-0819b433b/",
     email: "202114013@uns.edu.pe",
     image:"/niltonramos.jpg"
@@ -33,8 +33,8 @@ const teamMembers: TeamMember[] = [
   {
     name: "Sait Anjelo Cabrera Jara",
     role: "Chief Marketing Strategist (CMS)",
-    bio: "Desarrolla y ejecuta estrategias de marketing para posicionar la plataforma en el mercado y aumentar la visibilidad de los productos saludables.",
-    linkedin: "https://www.linkedin.com/in/ilannestorangelesrodriguez/",
+    bio: "Desarrolla y ejecuta estrategias de marketing para posicionar la plataforma en el mercado y aumentar la visibilidad de la marca.",
+    linkedin: "https://linkedin.com/in/",
     email: "202014026@uns.edu.pe",
     image:"/main.png"
   },
@@ -49,7 +49,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Mori Álvarez Zelidéé",
     role: "Chief Operating Officer (COO)",
-    bio: "Gestiona las operaciones diarias de TRINUP, optimizando la cadena de suministro y la relación con las mypes.",
+    bio: "Gestiona las operaciones diarias de TRINUP, optimizando la cadena de suministro y la relación con las mypes del mercado actual.",
     linkedin: "https://linkedin.com/in/david-sanchez",
     email: "david@trinup.com",
     image:"/main.png"
@@ -70,20 +70,23 @@ const teamMembers: TeamMember[] = [
     email: "202014026@uns.edu.pe",
     image:"/main.png"
   },
+];
+
+const mentores: TeamMember[] = [
   {
     name: "Ing. Johan Max López Heredia",
     role: "Mentor en Ingeniería de Sistemas",
-    bio: "Con experiencia en ingeniería de sistemas, guía el desarrollo técnico de TRINUP. Es Jefe de Área en Seguimiento de Egresados en la UNS y docente, especializado en gestión de sistemas y software.",
-    linkedin: "https://linkedin.com/in/elena-fernandez",
-    email: "elena@trinup.com",
-    image:"/main.png"
+    bio: "Guía el desarrollo técnico. Fue Jefe de Área en Seguimiento de Egresados en la UNS y es docente, especializado en gestión de sistemas y software.",
+    linkedin: "https://linkedin.com/in/johanlopezh",
+    email: "johan@trinup.com",
+    image:"/johanlopez.jpg"
   },
   {
     name: "Magíster Gisella Quispe Silva",
     role: "Gerente de Incubación de Empresas Innovadoras (1551 Incubadora)",
-    bio: "Con 12 años en innovación y emprendimiento, lidera la incubación de startups en 1551 Incubadora y es docente en la Universidad Nacional Mayor de San Marcos.",
+    bio: "Con 12 años en innovación y emprendimiento, lidera la incubación de startups en 1551 Incubadora y es docente en la UNMSM.",
     linkedin: "https://linkedin.com/in/elena-fernandez",
-    email: "elena@trinup.com",
+    email: "gisella@trinup.com",
     image:"/main.png"
   }
 ];
@@ -175,8 +178,36 @@ export default function AboutPage() {
           vida más saludable.
         </motion.p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 w-full max-w-7xl">
+        <motion.h1
+          className="text-4xl md:text-5xl font-bold text-center text-trinup-dark dark:text-trinup-light"
+          initial={{ scale: 0.9 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring", stiffness: 200, damping: 10 }}
+        >
+          Miembros
+        </motion.h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl place-items-center mx-auto">
           {teamMembers.map((member, index) => (
+            <motion.div
+              key={member.name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+            >
+              <TeamMember member={member} />
+            </motion.div>
+          ))}
+        </div>
+        <motion.h1
+          className="text-4xl md:text-5xl font-bold text-center text-trinup-dark dark:text-trinup-light"
+          initial={{ scale: 0.9 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring", stiffness: 200, damping: 10 }}
+        >
+          Mentores
+        </motion.h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-7xl place-items-center mx-auto">
+          {mentores.map((member, index) => (
             <motion.div
               key={member.name}
               initial={{ opacity: 0, y: 20 }}
