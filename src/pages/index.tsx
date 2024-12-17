@@ -240,7 +240,7 @@ export default function IndexPage() {
           transition={{ delay: 0.4, duration: 0.8 }}
         >
           <motion.h1
-            className="text-7xl font-bold text-center text-trinup-light"
+            className="text-3xl md:text-5xl font-bold text-center text-trinup-light"
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             transition={{ type: "spring", stiffness: 200, damping: 10 }}
@@ -274,7 +274,7 @@ export default function IndexPage() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          <motion.p className="text-center font-bold text-xl text-trinup-light px-4 max-w-4xl">
+          <motion.p className="text-justify font-bold text-xl text-trinup-light px-4 max-w-4xl">
             ¿Tienes preguntas o comentarios? Estamos aquí para ayudarte.
             Completa el formulario a continuación y nos pondremos en contacto
             contigo lo antes posible.
