@@ -23,7 +23,7 @@ export const Footer = () => {
           title="LinkedIn"
         >
           <span className="hidden sm:block">Nilton Ramos.</span>
-          <span className="block sm:hidden">Nilton R. E.</span>
+          <span className="block sm:hidden">Nilton R.</span>
         </Link>
         <span className="ml-1">Todos los derechos reservados.</span>
       </motion.div>
