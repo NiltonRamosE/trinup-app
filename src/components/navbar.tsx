@@ -1,5 +1,4 @@
-import { useState, useRef } from "react";
-import { useScroll } from "react-use";
+import { useState } from "react";
 import {
   Navbar as NavbarUI,
   NavbarBrand,
@@ -17,14 +16,9 @@ import { siteConfig } from "@/config/site";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const ref = useRef(null);
-  const { y } = useScroll(ref);
-  const isScrolled = y > 0;
   return (
     <NavbarUI
-      className={`fixed top-0 left-0 right-0 z-50 pt-4 transition-colors ${
-        isScrolled ? "navbar-transparent" : ""
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 pt-4 transition-colors"
       maxWidth="xl"
       onMenuOpenChange={setIsMenuOpen}
     >
