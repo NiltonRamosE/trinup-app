@@ -12,23 +12,23 @@ interface Post {
 const posts: Post[] = [
   {
     id: 1,
-    image: "/post-1.png",
+    image: "images/post-1.webp",
     caption:
       "Gran variedad de alimentos funcionales, ¡y todo adaptado a mis necesidades",
-    social: "/instagram.png",
+    social: "images/instagram.webp",
   },
   {
     id: 2,
-    image: "/post-2.png",
+    image: "images/post-2.webp",
     caption:
       "Una plataforma que te cuida. Productos saludables y de calidad en minutos",
-    social: "/instagram.png",
+    social: "images/instagram.webp",
   },
   {
     id: 3,
-    image: "/post-3.png",
+    image: "images/post-3.webp",
     caption: "Productos saludables y de calidad en solo minutos. ¡Que genial!",
-    social: "/facebook.png",
+    social: "images/facebook.webp",
   },
 ];
 
@@ -78,7 +78,7 @@ export default function SocialFeed() {
           className="bg-white rounded-lg shadow-lg mx-auto p-4 flex flex-col space-y-4 relative"
         >
           <img
-            src="/facebook.png"
+            src="images/facebook.webp"
             alt="Red Social"
             className="absolute top-0 left-0 w-[80px] h-[80px] object-contain"
           />
@@ -97,7 +97,7 @@ export default function SocialFeed() {
           className="bg-white rounded-lg shadow-lg mx-auto p-4 flex flex-col space-y-4 relative"
         >
           <img
-            src="/facebook.png"
+            src="images/facebook.webp"
             alt="Red Social"
             className="absolute top-0 left-0 w-[80px] h-[80px] object-contain"
           />
@@ -129,7 +129,7 @@ export default function SocialFeed() {
         transition={{ duration: 0.5 }}
         className="flex items-center justify-center mt-10"
       >
-        <img src="/fondo-black.png" alt="Red Social" className=" w-[100%] lg:w-[70%]" />
+        <img src="images/fondo-black.webp" alt="Red Social" className=" w-[100%] lg:w-[70%]" />
       </motion.div>
     </div>
   );

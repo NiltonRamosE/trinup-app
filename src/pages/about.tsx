@@ -20,7 +20,7 @@ const teamMembers: TeamMember[] = [
     bio: "Fundadora y guía la estrategia general de TRINUP, enfocándose en el crecimiento y la innovación en el sector de alimentos funcionales.",
     linkedin: "https://linkedin.com/in/astrid-ariana-verde-lopez-08939929b",
     email: "astrid@trinup.com",
-    image:"/astridverde.jpg"
+    image:"images/astridverde.webp"
   },
   {
     name: "Nilton Ramos Encarnacion",
@@ -28,7 +28,7 @@ const teamMembers: TeamMember[] = [
     bio: "Líder tecnológico de TRINUP, supervisa el desarrollo de la plataforma e integra tecnologías avanzadas para una experiencia personalizada.",
     linkedin: "https://www.linkedin.com/in/nilton-ramos-encarnacion-0819b433b/",
     email: "202114013@uns.edu.pe",
-    image:"/niltonramos.jpg"
+    image:"images/niltonramos.webp"
   },
   {
     name: "Sait Anjelo Cabrera Jara",
@@ -36,7 +36,7 @@ const teamMembers: TeamMember[] = [
     bio: "Desarrolla y ejecuta estrategias de marketing para posicionar la plataforma en el mercado y aumentar la visibilidad de la marca.",
     linkedin: "https://linkedin.com/in/sait-anjelo-cabrera-jara-a9536532b",
     email: "202014026@uns.edu.pe",
-    image:"/main.png"
+    image:"images/main.webp"
   },
   {
     name: "Katherine Lizeth López Areche",
@@ -44,7 +44,7 @@ const teamMembers: TeamMember[] = [
     bio: "Supervisa la calidad y selección de productos, asegurando que cumplan con los estándares de salud y bienestar de los consumidores.",
     linkedin: "https://linkedin.com/in/",
     email: "Katherine@trinup.com",
-    image:"/main.png"
+    image:"images/main.webp"
   },
   {
     name: "Mori Álvarez Zelidéé",
@@ -52,7 +52,7 @@ const teamMembers: TeamMember[] = [
     bio: "Gestiona las operaciones diarias de TRINUP, optimizando la cadena de suministro y la relación con las mypes del mercado actual.",
     linkedin: "https://linkedin.com/in/david-sanchez",
     email: "david@trinup.com",
-    image:"/main.png"
+    image:"images/main.webp"
   },
   {
     name: "Stalyn Zevallos García",
@@ -60,7 +60,7 @@ const teamMembers: TeamMember[] = [
     bio: "Lidera las estrategias de marketing y promoción de la plataforma, posicionando a TRINUP como marca líder en alimentos funcionales.",
     linkedin: "https://linkedin.com/in/elena-fernandez",
     email: "elena@trinup.com",
-    image:"/main.png"
+    image:"images/main.webp"
   },
   {
     name: "Ilan Néstor Ángeles Rodríguez",
@@ -68,7 +68,7 @@ const teamMembers: TeamMember[] = [
     bio: "Mejora la experiencia de usuario en la plataforma, asegurando una interfaz intuitiva y una experiencia personalizada para los consumidores.",
     linkedin: "https://linkedin.com/in/elena-fernandez",
     email: "202014026@uns.edu.pe",
-    image:"/main.png"
+    image:"images/main.webp"
   },
 ];
 
@@ -79,7 +79,7 @@ const mentores: TeamMember[] = [
     bio: "Guía el desarrollo técnico. Fue Jefe de Área en Seguimiento de Egresados en la UNS y es docente, especializado en gestión de sistemas y software.",
     linkedin: "https://linkedin.com/in/johanlopezh",
     email: "johan@trinup.com",
-    image:"/johanlopez.jpg"
+    image:"images/johanlopez.webp"
   },
   {
     name: "Magíster Gisella Quispe Silva",
@@ -87,7 +87,7 @@ const mentores: TeamMember[] = [
     bio: "Con 12 años en innovación y emprendimiento, lidera la incubación de startups en 1551 Incubadora y es docente en la UNMSM.",
     linkedin: "https://linkedin.com/in/elena-fernandez",
     email: "gisella@trinup.com",
-    image:"/main.png"
+    image:"images/main.webp"
   }
 ];
 

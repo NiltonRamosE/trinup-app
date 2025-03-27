@@ -119,7 +119,7 @@ export default function IndexPage() {
           >
             <div className="absolute top-[-15px] sm:top-[-175px] md:top-[-230px] left-[-40px] w-[180%] sm:w-[200%] md:w-[210%] h-[140%] transform -rotate-[1deg] z-0 ">
               <Image
-                src="/component_green.png"
+                src="images/component_green.webp"
                 alt="Fondo Verde"
                 className="w-full h-auto"
               />
@@ -128,7 +128,7 @@ export default function IndexPage() {
             <div className="relative z-10 mt-[-80px] ">
               <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 w-[40vw] h-[20vh] bg-black/30 rounded-full blur-lg"></div>
               <Image
-                src="/mall.png"
+                src="images/mall.webp"
                 alt="Carrito de Compras"
                 className="mx-auto mt-20 sm:mt-0"
               />
@@ -158,7 +158,7 @@ export default function IndexPage() {
           >
             <div className="flex flex-col items-center justify-center w-32 h-32 md:w-36 md:h-36">
               <img
-                src="nutriavo.png"
+                src="images/nutriavo.webp"
                 alt="NutriAvo"
                 className="w-[90%] h-full object-contain"
               />
@@ -166,7 +166,7 @@ export default function IndexPage() {
 
             <div className="flex flex-col items-center justify-center w-32 h-32 md:w-36 md:h-36">
               <img
-                src="vitalmash.png"
+                src="images/vitalmash.webp"
                 alt="VitalMash"
                 className="w-[60%] h-full object-contain"
               />
@@ -174,7 +174,7 @@ export default function IndexPage() {
 
             <div className="flex flex-col items-center justify-center w-32 h-32 md:w-36 md:h-36">
               <img
-                src="sklit.png"
+                src="images/sklit.webp"
                 alt="Sklit"
                 className="w-[100%] h-full object-contain"
               />
