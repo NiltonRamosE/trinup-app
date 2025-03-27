@@ -7,7 +7,7 @@ interface CompanyInputsProps {
   onChangeOrg: (newData: Partial<Company>) => void;
 }
 
-const CompanyInput: React.FC<CompanyInputsProps> = ({ data, onChangeOrg }) => {
+export const CompanyInput: React.FC<CompanyInputsProps> = ({ data, onChangeOrg }) => {
   const [selectedPago, setSelectedPago] = useState<string | null>();
 
   const handlePagoChange = (value: string) => {
@@ -62,5 +62,3 @@ const CompanyInput: React.FC<CompanyInputsProps> = ({ data, onChangeOrg }) => {
     </div>
   );
 };
-
-export default CompanyInput;

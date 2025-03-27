@@ -14,7 +14,7 @@ import {
 import { ThemeSwitch } from "@/components/atoms/theme-switch";
 import { siteConfig } from "@/config/site";
 
-export const Navbar = () => {
+export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <NavbarUI

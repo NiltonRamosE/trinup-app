@@ -6,7 +6,7 @@ interface CustomerDataProps {
   onChangeCustomer: (newData: Partial<Customer>) => void;
 }
 
-const CustomerDataAditional: React.FC<CustomerDataProps> = ({ data, onChangeCustomer }) => {
+export const CustomerDataAditional: React.FC<CustomerDataProps> = ({ data, onChangeCustomer }) => {
   return (
     <div>
       <p className="mb-4 font-semibold">¡Infórmanos de tus aspectos de Salud!</p>
@@ -29,5 +29,3 @@ const CustomerDataAditional: React.FC<CustomerDataProps> = ({ data, onChangeCust
     </div>
   );
 };
-
-export default CustomerDataAditional;

@@ -8,7 +8,7 @@ interface CustomerInputProps {
   onChangeCustomer: (newData: Partial<Customer>) => void;
 }
 
-const CustomerInput: React.FC<CustomerInputProps> = ({
+export const CustomerInput: React.FC<CustomerInputProps> = ({
   data,
   onChangeCustomer,
 }) => {
@@ -92,5 +92,3 @@ const CustomerInput: React.FC<CustomerInputProps> = ({
     </div>
   );
 };
-
-export default CustomerInput;

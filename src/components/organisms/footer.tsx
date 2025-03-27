@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "@nextui-org/react";
 
-export const Footer = () => {
+export default function Footer() {
   return (
     <motion.footer
       className="bg-background/70 backdrop-blur-md border-b w-full flex flex-col items-center justify-center py-6"

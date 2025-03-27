@@ -6,7 +6,7 @@ interface CompanyInputProps {
   onChangeOrg: (newData: Partial<Company>) => void;
 }
 
-const CompanyInputAditional: React.FC<CompanyInputProps> = ({ data, onChangeOrg }) => {
+export const CompanyInputAditional: React.FC<CompanyInputProps> = ({ data, onChangeOrg }) => {
   return (
     <div>
       <p className="mb-4 font-semibold">¡Infórmanos de cosas adicionales de tu empresa!</p>
@@ -21,5 +21,3 @@ const CompanyInputAditional: React.FC<CompanyInputProps> = ({ data, onChangeOrg 
     </div>
   );
 };
-
-export default CompanyInputAditional;
