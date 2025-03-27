@@ -1,12 +1,12 @@
 import { Input } from "@nextui-org/react";
 import { Customer } from "@/lib/types/models/customer";
 
-interface CustomerDataProps {
+interface CustomerInputProps {
   data: Customer;
   onChangeCustomer: (newData: Partial<Customer>) => void;
 }
 
-export const CustomerDataAditional: React.FC<CustomerDataProps> = ({ data, onChangeCustomer }) => {
+export const CustomerInputAditional: React.FC<CustomerInputProps> = ({ data, onChangeCustomer }) => {
   return (
     <div>
       <p className="mb-4 font-semibold">¡Infórmanos de tus aspectos de Salud!</p>
