@@ -2,7 +2,7 @@ import { Button, Card, Link } from "@nextui-org/react";
 import { HomeIcon } from "lucide-react";
 import { motion } from "framer-motion";
 
-import DefaultLayout from "@/layouts/default";
+import DefaultLayout from "@/components/templates/default";
 import { title } from "@/components/primitives";
 
 export default function NotFoundPage() {
