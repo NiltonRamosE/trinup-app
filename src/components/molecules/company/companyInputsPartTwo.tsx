@@ -1,12 +1,12 @@
 import { Input } from "@nextui-org/react";
-import { Empresa } from "@/models/empresa";
+import { Company } from "@/lib/types/models/company";
 
-interface DatosEmpresaAdicionalProps {
-  data: Empresa;
-  onChangeOrg: (newData: Partial<Empresa>) => void;
+interface CompanyInputProps {
+  data: Company;
+  onChangeOrg: (newData: Partial<Company>) => void;
 }
 
-const DatosEmpresaAdicional: React.FC<DatosEmpresaAdicionalProps> = ({ data, onChangeOrg }) => {
+const CompanyInputAditional: React.FC<CompanyInputProps> = ({ data, onChangeOrg }) => {
   return (
     <div>
       <p className="mb-4 font-semibold">¡Infórmanos de cosas adicionales de tu empresa!</p>
@@ -22,4 +22,4 @@ const DatosEmpresaAdicional: React.FC<DatosEmpresaAdicionalProps> = ({ data, onC
   );
 };
 
-export default DatosEmpresaAdicional;
+export default CompanyInputAditional;

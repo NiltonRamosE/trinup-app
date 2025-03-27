@@ -4,20 +4,20 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button, Link } from "@nextui-org/react";
 import { ArrowRight, ArrowLeft } from "lucide-react";
-import DefaultLayout from "@/layouts/default";
-import DatosPersonales from "@/pages/formsRegister/client/datosPersonales";
-import DatosEmpresa from "@/pages/formsRegister/org/datosEmpresa";
-import DatosSalud from "@/pages/formsRegister/client/datosSalud";
-import DatosEmpresaAdicional from "@/pages/formsRegister/org/datosEmpresaAdicional";
+import DefaultLayout from "@/components/templates/default";
+import CustomerInput from "@/components/molecules/customer/customerInputsPartOne";
+import CompanyInput from "@/components/molecules/company/companyInputsPartOne";
+import CustomerInputAditional from "@/components/molecules/customer/customerInputsPartTwo";
+import CompanyInputAditional from "@/components/molecules/company/companyInputsPartTwo";
 
-import { Cliente } from "@/models/cliente";
-import { Empresa } from "@/models/empresa";
+import { Customer } from "@/lib/types/models/customer";
+import { Company } from "@/lib/types/models/company";
 
 export default function RegisterPage() {
-  const [activeTab, setActiveTab] = useState<"cliente" | "empresa">("cliente");
+  const [activeTab, setActiveTab] = useState<"customer" | "company">("customer");
   const [formStep, setFormStep] = useState(1);
 
-  const [clienteData, setClienteData] = useState<Cliente>({
+  const [customerData, setCustomerData] = useState<Customer>({
     nombre: "",
     email: "",
     apellidoPaterno: "",
@@ -28,7 +28,7 @@ export default function RegisterPage() {
     talla: "",
   });
 
-  const [empresaData, setEmpresaData] = useState<Empresa>({
+  const [companyData, setCompanyData] = useState<Company>({
     ruc: "",
     razonSocial: "",
     pago: "no",
@@ -44,8 +44,8 @@ export default function RegisterPage() {
   };
 
   const handleFinalizar = () => {
-    console.log("Datos Cliente:", clienteData);
-    console.log("Datos Empresa:", empresaData);
+    console.log("Datos Cliente:", customerData);
+    console.log("Datos Empresa:", companyData);
 
     setTimeout(() => {
       setFormStep(1);
@@ -54,41 +54,41 @@ export default function RegisterPage() {
 
   const renderFormContent = () => {
     if (formStep === 1) {
-      if (activeTab === "cliente") {
+      if (activeTab === "customer") {
         return (
-          <DatosPersonales
-            data={clienteData}
-            onChangeClient={(newData) =>
-              setClienteData({ ...clienteData, ...newData })
+          <CustomerInput
+            data={customerData}
+            onChangeCustomer={(newData) =>
+              setCustomerData({ ...customerData, ...newData })
             }
           />
         );
-      } else if (activeTab === "empresa") {
+      } else if (activeTab === "company") {
         return (
-          <DatosEmpresa
-            data={empresaData}
+          <CompanyInput
+            data={companyData}
             onChangeOrg={(newData) =>
-              setEmpresaData({ ...empresaData, ...newData })
+              setCompanyData({ ...companyData, ...newData })
             }
           />
         );
       }
     } else if (formStep === 2) {
-      if (activeTab === "cliente") {
+      if (activeTab === "customer") {
         return (
-          <DatosSalud
-            data={clienteData}
-            onChangeClient={(newData) =>
-              setClienteData({ ...clienteData, ...newData })
+          <CustomerInputAditional
+            data={customerData}
+            onChangeCustomer={(newData) =>
+              setCustomerData({ ...customerData, ...newData })
             }
           />
         );
-      } else if (activeTab === "empresa") {
+      } else if (activeTab === "company") {
         return (
-          <DatosEmpresaAdicional
-            data={empresaData}
+          <CompanyInputAditional
+            data={companyData}
             onChangeOrg={(newData) =>
-              setEmpresaData({ ...empresaData, ...newData })
+              setCompanyData({ ...companyData, ...newData })
             }
           />
         );
@@ -126,9 +126,9 @@ export default function RegisterPage() {
             {formStep === 1 && (
               <div className="flex items-center justify-center mb-6">
                 <button
-                  onClick={() => setActiveTab("cliente")}
+                  onClick={() => setActiveTab("customer")}
                   className={`px-6 py-2 text-sm font-semibold transition-all duration-300 border-2 ${
-                    activeTab === "cliente"
+                    activeTab === "customer"
                       ? "bg-trinup-green text-white border-trinup-green font-extrabold"
                       : "bg-transparent text-gray-700 dark:text-gray-300 border-trinup-green hover:bg-gray-100 dark:hover:bg-gray-800 font-extrabold"
                   } rounded-l-lg`}
@@ -136,9 +136,9 @@ export default function RegisterPage() {
                   Cliente
                 </button>
                 <button
-                  onClick={() => setActiveTab("empresa")}
+                  onClick={() => setActiveTab("company")}
                   className={`px-6 py-2 text-sm font-semibold transition-all duration-300 border-2 ${
-                    activeTab === "empresa"
+                    activeTab === "company"
                       ? "bg-trinup-green text-white border-trinup-green font-extrabold"
                       : "bg-transparent text-gray-700 dark:text-gray-300 border-trinup-green hover:bg-gray-100 dark:hover:bg-gray-800 font-extrabold"
                   } rounded-r-lg`}

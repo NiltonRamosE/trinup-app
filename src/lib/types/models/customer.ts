@@ -1,4 +1,4 @@
-export interface Cliente {
+export interface Customer {
   nombre: string; // Nombre completo del cliente
   apellidoPaterno: string
   apellidoMaterno: string

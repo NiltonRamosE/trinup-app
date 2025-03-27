@@ -11,7 +11,7 @@ import {
   Button,
 } from "@nextui-org/react";
 
-import { ThemeSwitch } from "@/components/theme-switch";
+import { ThemeSwitch } from "@/components/atoms/theme-switch";
 import { siteConfig } from "@/config/site";
 
 export const Navbar = () => {

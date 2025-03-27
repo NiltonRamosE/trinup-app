@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
+import { Navbar } from "@/components/organisms/navbar";
+import { Footer } from "@/components/organisms/footer";
 
 export default function DefaultLayout({
   children,

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Input, Button, Card, Link, Checkbox } from "@nextui-org/react";
 import { Eye, EyeOff, LogIn } from "lucide-react";
-import DefaultLayout from "@/layouts/default";
+import DefaultLayout from "@/components/templates/default";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");

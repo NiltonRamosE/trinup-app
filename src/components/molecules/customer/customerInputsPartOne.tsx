@@ -1,16 +1,16 @@
 import { Input } from "@nextui-org/react";
-import { Cliente } from "@/models/cliente";
+import { Customer } from "@/lib/types/models/customer";
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 
-interface DatosPersonalesProps {
-  data: Cliente;
-  onChangeClient: (newData: Partial<Cliente>) => void;
+interface CustomerInputProps {
+  data: Customer;
+  onChangeCustomer: (newData: Partial<Customer>) => void;
 }
 
-const DatosPersonales: React.FC<DatosPersonalesProps> = ({
+const CustomerInput: React.FC<CustomerInputProps> = ({
   data,
-  onChangeClient,
+  onChangeCustomer,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isVisible2, setIsVisible2] = useState(false);
@@ -24,7 +24,7 @@ const DatosPersonales: React.FC<DatosPersonalesProps> = ({
         placeholder="Ingresa tu nombre completo"
         type="text"
         value={data.nombre}
-        onChange={(e) => onChangeClient({ nombre: e.target.value })}
+        onChange={(e) => onChangeCustomer({ nombre: e.target.value })}
         className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4"
       />
       <div className="grid grid-cols-2">
@@ -32,14 +32,14 @@ const DatosPersonales: React.FC<DatosPersonalesProps> = ({
           label="A. Paterno"
           type="text"
           value={data.apellidoPaterno}
-          onChange={(e) => onChangeClient({ apellidoPaterno: e.target.value })}
+          onChange={(e) => onChangeCustomer({ apellidoPaterno: e.target.value })}
           className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4"
         />
         <Input
           label="A. Materno"
           type="text"
           value={data.apellidoMaterno}
-          onChange={(e) => onChangeClient({ apellidoMaterno: e.target.value })}
+          onChange={(e) => onChangeCustomer({ apellidoMaterno: e.target.value })}
           className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4 ml-1"
         />
       </div>
@@ -49,7 +49,7 @@ const DatosPersonales: React.FC<DatosPersonalesProps> = ({
         placeholder="example@gmail.com"
         type="email"
         value={data.email}
-        onChange={(e) => onChangeClient({ email: e.target.value })}
+        onChange={(e) => onChangeCustomer({ email: e.target.value })}
         className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4"
       />
 
@@ -59,7 +59,7 @@ const DatosPersonales: React.FC<DatosPersonalesProps> = ({
           placeholder="******"
           type={isVisible ? "text" : "password"}
           value={data.password}
-          onChange={(e) => onChangeClient({ password: e.target.value })}
+          onChange={(e) => onChangeCustomer({ password: e.target.value })}
           className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4"
           endContent={
             <button type="button" onClick={toggleVisibility}>
@@ -76,7 +76,7 @@ const DatosPersonales: React.FC<DatosPersonalesProps> = ({
           placeholder="******"
           type={isVisible2 ? "text" : "password"}
           value={data.passwordConfirm}
-          onChange={(e) => onChangeClient({ passwordConfirm: e.target.value })}
+          onChange={(e) => onChangeCustomer({ passwordConfirm: e.target.value })}
           className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4 ml-1"
           endContent={
             <button type="button" onClick={toggleVisibility2}>
@@ -93,4 +93,4 @@ const DatosPersonales: React.FC<DatosPersonalesProps> = ({
   );
 };
 
-export default DatosPersonales;
+export default CustomerInput;

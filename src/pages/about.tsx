@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardBody, CardFooter, Avatar, Button } from "@nextui-org/react";
 import { Linkedin, Mail } from "lucide-react";
-import DefaultLayout from "@/layouts/default";
+import DefaultLayout from "@/components/templates/default";
 
 interface TeamMember {
   name: string;

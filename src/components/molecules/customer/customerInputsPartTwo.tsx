@@ -1,12 +1,12 @@
 import { Input } from "@nextui-org/react";
-import { Cliente } from "@/models/cliente";
+import { Customer } from "@/lib/types/models/customer";
 
-interface DatosSaludProps {
-  data: Cliente;
-  onChangeClient: (newData: Partial<Cliente>) => void;
+interface CustomerDataProps {
+  data: Customer;
+  onChangeCustomer: (newData: Partial<Customer>) => void;
 }
 
-const DatosSalud: React.FC<DatosSaludProps> = ({ data, onChangeClient }) => {
+const CustomerDataAditional: React.FC<CustomerDataProps> = ({ data, onChangeCustomer }) => {
   return (
     <div>
       <p className="mb-4 font-semibold">¡Infórmanos de tus aspectos de Salud!</p>
@@ -15,7 +15,7 @@ const DatosSalud: React.FC<DatosSaludProps> = ({ data, onChangeClient }) => {
         placeholder="Ingresa tu Peso"
         type="text"
         value={data.peso}
-        onChange={(e) => onChangeClient({ peso: e.target.value })}
+        onChange={(e) => onChangeCustomer({ peso: e.target.value })}
         className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4"
       />
       <Input
@@ -23,11 +23,11 @@ const DatosSalud: React.FC<DatosSaludProps> = ({ data, onChangeClient }) => {
         placeholder="Ingresa tu talla"
         type="text"
         value={data.talla}
-        onChange={(e) => onChangeClient({ talla: e.target.value })}
+        onChange={(e) => onChangeCustomer({ talla: e.target.value })}
         className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4"
       />
     </div>
   );
 };
 
-export default DatosSalud;
+export default CustomerDataAditional;

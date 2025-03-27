@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
-import DefaultLayout from "@/layouts/default";
+import DefaultLayout from "@/components/templates/default";
 import { Apple, Leaf, Heart } from "lucide-react";
-import SocialFeed from "@/components/socialFeed";
-import ContactForm from "@/components/contactForm";
+import SocialFeed from "@/components/organisms/socialFeed";
+import ContactForm from "@/components/organisms/form/contactForm";
 
 export default function IndexPage() {
   const [isVisible, setIsVisible] = useState(false);

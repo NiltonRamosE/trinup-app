@@ -1,13 +1,13 @@
 import { Input, Checkbox } from "@nextui-org/react";
-import { Empresa } from "@/models/empresa";
+import { Company } from "@/lib/types/models/company";
 import { useState } from "react";
 
-interface DatosEmpresaProps {
-  data: Empresa;
-  onChangeOrg: (newData: Partial<Empresa>) => void;
+interface CompanyInputsProps {
+  data: Company;
+  onChangeOrg: (newData: Partial<Company>) => void;
 }
 
-const DatosEmpresa: React.FC<DatosEmpresaProps> = ({ data, onChangeOrg }) => {
+const CompanyInput: React.FC<CompanyInputsProps> = ({ data, onChangeOrg }) => {
   const [selectedPago, setSelectedPago] = useState<string | null>();
 
   const handlePagoChange = (value: string) => {
@@ -63,4 +63,4 @@ const DatosEmpresa: React.FC<DatosEmpresaProps> = ({ data, onChangeOrg }) => {
   );
 };
 
-export default DatosEmpresa;
+export default CompanyInput;
