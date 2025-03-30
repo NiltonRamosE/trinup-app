@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { SocialPost, Post } from "@/components/molecules/socialPost";
+import { SocialPost, Post } from "@/components/molecules/home/socialPost";
 
 const posts: Post[] = [
   {

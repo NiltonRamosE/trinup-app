@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { Card } from "@nextui-org/react";
 import DefaultLayout from "@/components/templates/default";
-import { LoginForm } from "@/components/molecules/loginForm";
+import { LoginForm } from "@/components/molecules/login/loginForm";
 
 export default function LoginPage() {
   return (
