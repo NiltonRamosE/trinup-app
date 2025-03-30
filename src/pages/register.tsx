@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 import { Button, Link } from "@nextui-org/react";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import DefaultLayout from "@/components/templates/default";
-import { CustomerInput } from "@/components/molecules/customer/customerInputsPartOne";
-import { CompanyInput } from "@/components/molecules/company/companyInputsPartOne";
-import { CompanyInputAditional } from "@/components/molecules/company/companyInputsPartTwo";
-import { CustomerInputAditional } from "@/components/molecules/customer/customerInputsPartTwo";
+import { CustomerInput } from "@/components/molecules/register/customer/customerInputsPartOne";
+import { CompanyInput } from "@/components/molecules/register/company/companyInputsPartOne";
+import { CompanyInputAditional } from "@/components/molecules/register/company/companyInputsPartTwo";
+import { CustomerInputAditional } from "@/components/molecules/register/customer/customerInputsPartTwo";
 
 import { Customer } from "@/lib/types/models/customer";
 import { Company } from "@/lib/types/models/company";
