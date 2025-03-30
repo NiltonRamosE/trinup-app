@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Card } from "@nextui-org/react";
-import { ContactForm } from "@/components/molecules/contactForm";
+import { ContactForm } from "@/components/molecules/home/contactForm";
 
 export default function ContactSection() {
   return (
