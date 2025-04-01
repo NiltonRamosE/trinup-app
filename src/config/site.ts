@@ -6,6 +6,10 @@ export const siteConfig = {
     "TrinUp es un app donde toda persona merece o puede mejorar su estilo de vida.",
   navItems: [
     {
+      label: "Calculadora IMC",
+      href: "/calculadoraIMC",
+    },
+    {
       label: "Precios",
       href: "/precios",
     },
