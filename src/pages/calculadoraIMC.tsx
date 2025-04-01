@@ -39,7 +39,7 @@ export default function CalculadoraIMCPage() {
     const highlightedIndex = getIMCIndex(imc);
   
     return index === highlightedIndex
-      ? `${baseBorderClass} border-trinup-dark`
+      ? `${baseBorderClass} border-trinup-dark dark:border-trinup-light`
       : "";
   };
 
@@ -48,7 +48,7 @@ export default function CalculadoraIMCPage() {
       <section className="flex flex-col items-center justify-center gap-8 py-6 md:py-8 min-h-screen">
         <div className="inline-block max-w-lg text-center mb-8">
           <h1 className={title()}>Calculadora de IMC</h1>
-          <p className="text-trinup-dark mt-4">
+          <p className="text-trinup-dark dark:text-trinup-light mt-4">
             Tu IMC puede ser una medida inicial útil para identificar tu
             clasificación de peso y factores de riesgo.
           </p>
@@ -56,7 +56,7 @@ export default function CalculadoraIMCPage() {
         <div className="bg-white shadow-lg grid grid-cols-1 md:grid-cols-2 gap-10 h-full w-auto p-12 ">
           <div className="space-y-6 pr-10">
             <div>
-              <label className="font-semibold block mb-2">TU ALTURA</label>
+              <label className="font-semibold block mb-2 text-trinup-dark">TU ALTURA</label>
               <div className="flex items-center gap-4">
                 <motion.input
                   type="range"
@@ -76,11 +76,11 @@ export default function CalculadoraIMCPage() {
                   onChange={(e) => setAltura(Number(e.target.value))}
                   className="border-3 p-2 text-center w-20 text-lg font-semibold rounded-full border-trinup-green"
                 />
-                cm
+                <span className="text-trinup-dark">cm</span>
               </div>
             </div>
             <div>
-              <label className="font-semibold block mb-2">TU PESO</label>
+              <label className="font-semibold block mb-2 text-trinup-dark">TU PESO</label>
               <div className="flex items-center gap-4">
                 <motion.input
                   type="range"
@@ -100,7 +100,7 @@ export default function CalculadoraIMCPage() {
                   onChange={(e) => setPeso(Number(e.target.value))}
                   className="border-3 p-2 text-center w-20 text-lg font-semibold rounded-full border-trinup-green"
                 />
-                kg
+                <span className="text-trinup-dark" >kg</span>
               </div>
             </div>
           </div>
@@ -118,11 +118,11 @@ export default function CalculadoraIMCPage() {
             >
               {imc}
             </motion.div>
-            <p className="text-sm mt-4">
+            <p className="text-sm mt-4 text-trinup-dark">
               Clasificación:{" "}
               <span className="text-black font-semibold">{clasificacion}</span>
             </p>
-            <p className="text-sm mt-1">
+            <p className="text-sm mt-1 text-trinup-dark">
               Riesgo de enfermedad relacionada:
               <br />
               <span className="font-bold text-black">{riesgo}</span>

@@ -23,7 +23,7 @@ const ColumnaIMC: React.FC<ColumnaIMCProps> = ({ index, imc, riesgo, getIMCIndex
       </div>
 
       {/* Clasificación */}
-      <div className={`flex justify-center sm:font-semibold h-24 items-center ${getBackgroundClass(index)} ${getBorderClass(index, "classification")}`}>
+      <div className={`flex justify-center sm:font-semibold h-24 items-center text-trinup-dark ${getBackgroundClass(index)} ${getBorderClass(index, "classification")}`}>
         {getClasificacion(index)}
       </div>
 
