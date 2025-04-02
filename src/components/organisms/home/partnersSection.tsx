@@ -57,31 +57,15 @@ export default function PartnersSection() {
         </div>
       </motion.div>
       <motion.div
-        className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4 pb-6"
+        className="relative z-10 grid w-full grid-cols-1 md:grid-cols-1 md:grid-rows-2 gap-8 max-w-6xl mx-auto pb-6"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
         transition={{ delay: 1, duration: 0.8 }}
       >
-        {[
-          {
-            icon: Apple,
-            title: "Nutrición Personalizada",
-            description: "Planes adaptados a tus necesidades",
-          },
-          {
-            icon: Leaf,
-            title: "Vida Sostenible",
-            description: "Aprende a vivir en armonía",
-          },
-          {
-            icon: Heart,
-            title: "Apoyo Profesional",
-            description: "Expertos dedicados a tu bienestar",
-          },
-        ].map((item, index) => (
+        <div className=" flex items-center flex-col md:flex-row gap-16 w-full justify-between mb-8">
           <motion.div
-            key={index}
-            className="flex flex-col items-center py-6 px-2 bg-white dark:bg-trinup-dark dark:border-2 dark:border-trinup-light rounded-lg shadow-lg"
+            key={0}
+            className="flex py-[45px] flex-col items-center w-[400px] py-6 px-2 bg-white dark:bg-trinup-dark dark:border-2 dark:border-trinup-light rounded-lg shadow-lg"
             whileHover={{
               scale: 1.05,
               boxShadow:
@@ -89,15 +73,54 @@ export default function PartnersSection() {
             }}
             whileTap={{ scale: 0.95 }}
           >
-            <item.icon className="w-12 h-12 text-trinup-green mb-4" />
+            <Apple className="w-12 h-12 text-trinup-green mb-4" />
             <h3 className="text-xl mb-2 text-trinup-dark dark:text-white font-bold">
-              {item.title}
+              {"Nutrición Personalizada"}
             </h3>
             <p className="text-center text-gray-600 dark:text-gray-300 font-bold text-sm">
-              {item.description}
+              {"Planes adaptados a tus necesidades"}
             </p>
           </motion.div>
-        ))}
+          <motion.div
+            key={2}
+            className="flex py-[45px] flex-col items-center w-[400px] py-6 px-2 bg-white dark:bg-trinup-dark dark:border-2 dark:border-trinup-light rounded-lg shadow-lg"
+            whileHover={{
+              scale: 1.05,
+              boxShadow:
+                "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+            }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Heart className="w-12 h-12 text-trinup-green mb-4" />
+            <h3 className="text-xl mb-2 text-trinup-dark dark:text-white font-bold">
+              {"Apoyo Profesional"}
+            </h3>
+            <p className="text-center text-gray-600 dark:text-gray-300 font-bold text-sm">
+              {"Expertos dedicados a tu bienestar"}
+            </p>
+          </motion.div>
+        </div>
+
+        <div className="flex justify-center">
+          <motion.div
+            key={1}
+            className="flex flex-col py-[45px] w-[400px] items-center py-6 px-2 bg-white dark:bg-trinup-dark dark:border-2 dark:border-trinup-light rounded-lg shadow-lg"
+            whileHover={{
+              scale: 1.05,
+              boxShadow:
+                "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+            }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Leaf className="w-12 h-12 text-trinup-green mb-4" />
+            <h3 className="text-xl mb-2 text-trinup-dark dark:text-white font-bold">
+              {"Vida Sostenible"}
+            </h3>
+            <p className="text-center text-gray-600 dark:text-gray-300 font-bold text-sm">
+              {"Aprende a vivir en armonía"}
+            </p>
+          </motion.div>
+        </div>
       </motion.div>
     </motion.section>
   );

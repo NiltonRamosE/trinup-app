@@ -16,6 +16,7 @@ export default function IndexPage() {
       <SocialFeedSection />
 
       <ContactSection />
+
     </DefaultLayout>
   );
 }
