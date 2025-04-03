@@ -47,76 +47,81 @@ export default function SocialFeedSection() {
           NUESTRO PÚBLICO
         </motion.h1>
       </motion.div>
-      <div className="max-w-4xl mx-auto py-8 px-4">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
-        >
+      <div className="max-w-8xl w-full items-center gap-2 justify-center flex flex-wrap py-2">
+        <div className="flex-col w-[790px] max-w-[100%] mt-6">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="bg-white rounded-lg shadow-lg mx-auto p-4 flex flex-col space-y-4 relative"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
           >
-            <img
-              src="images/facebook.webp"
-              alt="Red Social"
-              className="absolute top-0 left-0 w-[80px] h-[80px] object-contain"
-            />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="bg-white rounded-lg shadow-lg mx-auto p-4 flex flex-col space-y-4 relative dark:border-2 dark:bg-background"
+            >
+              <img
+                src="images/facebook.webp"
+                alt="Red Social"
+                className="absolute top-0 left-0 w-[80px] h-[80px] object-contain"
+              />
 
-            <div className="pl-16 pr-4">
-              <p className="text-gray-900 font-semibold text-base leading-relaxed">
-                TRINUP hace que cuidar mi salud sea accesible y sencillo. <br />
-                <span className="font-bold">¡Totalmente recomendado!</span>
-              </p>
-            </div>
+              <div className="pl-16 pr-4">
+                <p className="text-gray-900 font-semibold text-base leading-relaxed dark:text-white">
+                  TRINUP hace que cuidar mi salud sea accesible y sencillo.
+                  ¡Totalmente recomendado!
+                </p>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="bg-white rounded-lg shadow-lg mx-auto p-4 flex flex-col space-y-4 relative dark:border-2 dark:bg-background"
+            >
+              <img
+                src="images/facebook.webp"
+                alt="Red Social"
+                className="absolute top-0 left-0 w-[80px] h-[80px] object-contain"
+              />
+
+              <div className="pl-16 pr-4">
+                <p className="text-gray-900 font-semibold text-base leading-relaxed dark:text-white">
+                  TRINUP es la forma más fácil de comer saludable! Productos
+                  frescos y adaptados a mí
+                </p>
+              </div>
+            </motion.div>
           </motion.div>
+
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="bg-white rounded-lg shadow-lg mx-auto p-4 flex flex-col space-y-4 relative"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10"
           >
-            <img
-              src="images/facebook.webp"
-              alt="Red Social"
-              className="absolute top-0 left-0 w-[80px] h-[80px] object-contain"
-            />
-
-            <div className="pl-16 pr-4">
-              <p className="text-gray-900 font-semibold text-base leading-relaxed">
-                TRINUP es la forma más fácil de comer saludable! <br />
-                <span className="font-bold">
-                  Productos frescos y adaptados a mí
-                </span>
-              </p>
-            </div>
+            {posts.map((post) => (
+              <SocialPost key={post.id} post={post} />
+            ))}
           </motion.div>
-        </motion.div>
-
+        </div>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10"
+          className="h-[500px] w-[600px] max-w-[100%] mt-6"
         >
-          {posts.map((post) => (
-            <SocialPost key={post.id} post={post} />
-          ))}
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="flex items-center justify-center mt-10"
-        >
-          <img
-            src="images/fondo-black.webp"
-            alt="Red Social"
-            className=" w-[100%] lg:w-[70%]"
-          />
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/uz3-qLYbIX0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-full"
+          ></iframe>
         </motion.div>
       </div>
     </motion.section>
