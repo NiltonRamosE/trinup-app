@@ -1,18 +1,8 @@
-export type SiteConfig = typeof siteConfig;
-
 export const siteConfig = {
   name: "TrinUp: Nutrición y superación",
   description:
     "TrinUp es un app donde toda persona merece o puede mejorar su estilo de vida.",
   navItems: [
-    {
-      label: "Calculadora IMC",
-      href: "/calculadoraIMC",
-    },
-    {
-      label: "Ingesta de Agua",
-      href: "/calculadoraIA",
-    },
     {
       label: "Precios",
       href: "/precios",
@@ -24,6 +14,16 @@ export const siteConfig = {
     {
       label: "Nosotros",
       href: "/nosotros",
+    },
+  ],
+  healthTools: [
+    {
+      label: "Calculadora IMC",
+      href: "/calculadoraIMC",
+    },
+    {
+      label: "Ingesta de Agua",
+      href: "/calculadoraIA",
     },
   ],
   navMenuItems: [
