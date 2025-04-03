@@ -10,6 +10,10 @@ export const siteConfig = {
       href: "/calculadoraIMC",
     },
     {
+      label: "Ingesta de Agua",
+      href: "/calculadoraIA",
+    },
+    {
       label: "Precios",
       href: "/precios",
     },
