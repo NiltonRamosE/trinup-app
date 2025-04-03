@@ -8,6 +8,7 @@ import NotFoundPage from "@/pages/notFound";
 import LoginPage from "@/pages/login";
 import RegisterPage from "@/pages/register";
 import CalculadoraIMCPage from "@/pages/calculadoraIMC";
+import CalculadoraIAPage from "@/pages/calculadoraIA";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route element={<NotFoundPage />} path="*" />
       <Route element={<RegisterPage />} path="/register" />
       <Route element={<CalculadoraIMCPage />} path="/calculadoraIMC" />
+      <Route element={<CalculadoraIAPage />} path="/calculadoraIA" />
     </Routes>
   );
 }
