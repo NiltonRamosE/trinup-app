@@ -15,7 +15,7 @@ export default function DefaultLayout({
   }, []);
 
   return (
-    <div className="relative flex flex-col min-h-screen overflow-hidden bg-trinup-light dark:bg-trinup-dark bg-[url('../../../../../public/images/curvas.webp')] bg-cover bg-center">
+    <div className="relative flex flex-col min-h-screen overflow-hidden bg-trinup-light dark:bg-trinup-dark">
       <div className="relative z-10 flex flex-col min-h-screen">
         <Navbar />
         <main className="container mx-auto px-6 flex-grow pt-14 pb-8">
