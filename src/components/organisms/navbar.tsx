@@ -92,7 +92,7 @@ export default function Navbar() {
                 className="lg:mr-10 mr-10 sm:mr-4 font-bold text-lg transition-colors duration-200 hover:text-[#1D9A4F] dark:text-white cursor-pointer"
                 color="foreground"
               >
-                Herramientas de salud
+                Herramientas
               </Link>
             </DropdownTrigger>
             <DropdownMenu
