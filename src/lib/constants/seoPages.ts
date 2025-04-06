@@ -50,3 +50,21 @@ export const blogPage: SEOFields = {
   url: "https://trinup-app.vercel.app/blog",
   image: "https://trinup-app.vercel.app/images/main.webp",
 };
+
+export const aboutPage: SEOFields = {
+  title: "Nosotros",
+  description:
+    "Descubre a las personas que impulsan TrinUp. Nuestro equipo está comprometido con promover la salud, la nutrición y el bienestar de cada persona.",
+  keywords: [
+    "equipo TrinUp",
+    "nosotros",
+    "quiénes somos",
+    "historia TrinUp",
+    "misión TrinUp",
+    "valores",
+    "salud y bienestar",
+    "nutrición",
+  ],
+  url: "https://trinup-app.vercel.app/nosotros",
+  image: "https://trinup-app.vercel.app/images/logo.webp",
+};
