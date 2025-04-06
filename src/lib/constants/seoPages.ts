@@ -86,3 +86,21 @@ export const loginPage: SEOFields = {
   url: "https://trinup-app.vercel.app/login",
   image: "https://trinup-app.vercel.app/images/logo.webp",
 };
+
+export const registerPage: SEOFields = {
+  title: "Registrar Cuenta",
+  description:
+    "Únete a TrinUp y empieza tu transformación hacia una vida más saludable. Regístrate para acceder a herramientas de nutrición, bienestar y hábitos positivos.",
+  keywords: [
+    "registrarse",
+    "crear cuenta",
+    "registro TrinUp",
+    "salud y bienestar",
+    "nutrición",
+    "hábitos saludables",
+    "bienestar personal",
+    "TrinUp",
+  ],
+  url: "https://trinup-app.vercel.app/register",
+  image: "https://trinup-app.vercel.app/images/logo.webp",
+};
