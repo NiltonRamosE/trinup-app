@@ -2,28 +2,23 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import DefaultLayout from "@/components/templates/default";
 import { title } from "@/components/primitives";
-import TablaIMC from "@/components/organisms/calculadoraIMC/tablaIMC";
-import { getClasificacion, getRiesgo, getIMCIndex } from "@/lib/constants/calculadoraIMC/imcUtils";
+import BMITable from "@/components/organisms/bmiCalculator/bmiTable";
+import { calculateBMI, getClassification, getRisk, getBMIClassificationPosition } from "@/lib/utils/bmi";
 
-export default function CalculadoraIMCPage() {
-  const [peso, setPeso] = useState<number>(65);
-  const [altura, setAltura] = useState<number>(165);
+export default function BMICalculatorPage() {
+  const [weight, setWeight] = useState<number>(65);
+  const [height, setHeight] = useState<number>(165);
 
-  const calcularIMC = (): number => {
-    const alturaEnMetros = altura / 100;
-    return parseFloat((peso / (alturaEnMetros * alturaEnMetros)).toFixed(1));
-  };
-
-  const obtenerClasificacion = (imc: number) => {
-    const index = getIMCIndex(imc);
+  const getBMIReport = (bmi: number) => {
+    const index = getBMIClassificationPosition(bmi);
     return {
-      clasificacion: getClasificacion(index),
-      riesgo: getRiesgo(index)
+      classification: getClassification(index),
+      risk: getRisk(index)
     };
   };
 
-  const imc = calcularIMC();
-  const { clasificacion, riesgo } = obtenerClasificacion(imc);
+  const bmi = calculateBMI(weight, height, "cm", "kg");
+  const { classification, risk } = getBMIReport(bmi);
   
   const getBorderClass = (index: number, rowType: string): string => {
     let baseBorderClass = "";
@@ -36,7 +31,7 @@ export default function CalculadoraIMCPage() {
       baseBorderClass = "border-l-4 border-r-4"; // Para la fila de clasificaciones
     }
   
-    const highlightedIndex = getIMCIndex(imc);
+    const highlightedIndex = getBMIClassificationPosition(bmi);
   
     return index === highlightedIndex
       ? `${baseBorderClass} border-trinup-dark dark:border-trinup-light`
@@ -62,8 +57,8 @@ export default function CalculadoraIMCPage() {
                   type="range"
                   min="60"
                   max="225"
-                  value={altura}
-                  onChange={(e) => setAltura(Number(e.target.value))}
+                  value={height}
+                  onChange={(e) => setHeight(Number(e.target.value))}
                   className="w-[150px] accent-trinup-green"
                   whileTap={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
@@ -72,8 +67,8 @@ export default function CalculadoraIMCPage() {
                   type="number"
                   min="60"
                   max="225"
-                  value={altura}
-                  onChange={(e) => setAltura(Number(e.target.value))}
+                  value={height}
+                  onChange={(e) => setHeight(Number(e.target.value))}
                   className="border-3 p-2 text-center w-20 text-lg font-semibold rounded-full border-trinup-green"
                 />
                 <span className="text-trinup-dark">cm</span>
@@ -86,8 +81,8 @@ export default function CalculadoraIMCPage() {
                   type="range"
                   min="6"
                   max="225"
-                  value={peso}
-                  onChange={(e) => setPeso(Number(e.target.value))}
+                  value={weight}
+                  onChange={(e) => setWeight(Number(e.target.value))}
                   className="w-[150px] accent-trinup-green "
                   whileTap={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
@@ -96,8 +91,8 @@ export default function CalculadoraIMCPage() {
                   type="number"
                   min="6"
                   max="225"
-                  value={peso}
-                  onChange={(e) => setPeso(Number(e.target.value))}
+                  value={weight}
+                  onChange={(e) => setWeight(Number(e.target.value))}
                   className="border-3 p-2 text-center w-20 text-lg font-semibold rounded-full border-trinup-green"
                 />
                 <span className="text-trinup-dark" >kg</span>
@@ -110,30 +105,30 @@ export default function CalculadoraIMCPage() {
               TU IMC ES
             </h2>
             <motion.div
-              key={imc}
+              key={bmi}
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5 }}
               className="text-7xl font-extrabold mt-2 text-trinup-green"
             >
-              {imc}
+              {bmi}
             </motion.div>
             <p className="text-sm mt-4 text-trinup-dark">
               Clasificación:{" "}
-              <span className="text-black font-semibold">{clasificacion}</span>
+              <span className="text-black font-semibold">{classification}</span>
             </p>
             <p className="text-sm mt-1 text-trinup-dark">
               Riesgo de enfermedad relacionada:
               <br />
-              <span className="font-bold text-black">{riesgo}</span>
+              <span className="font-bold text-black">{risk}</span>
             </p>
           </div>
         </div>
 
-        <TablaIMC
-          imc={imc}
-          riesgo={riesgo}
-          getIMCIndex={getIMCIndex}
+        <BMITable
+          bmi={bmi}
+          risk={risk}
+          getBMIClassificationPosition={getBMIClassificationPosition}
           getBorderClass={getBorderClass}
         />
       </section>
