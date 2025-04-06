@@ -13,6 +13,9 @@ import { CustomerInputAditional } from "@/components/molecules/register/customer
 import { Customer } from "@/lib/types/models/customer";
 import { Company } from "@/lib/types/models/company";
 
+import { Helmet } from "react-helmet-async";
+import { registerPage } from "@/lib/constants/seoPages"
+
 export default function RegisterPage() {
   const [activeTab, setActiveTab] = useState<"customer" | "company">("customer");
   const [formStep, setFormStep] = useState(1);
@@ -97,114 +100,135 @@ export default function RegisterPage() {
   };
 
   return (
-    <DefaultLayout>
-      <div className="flex flex-col items-center justify-center min-h-screen p-4">
-        <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
+    <>
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>{registerPage.title}</title>
+        <meta name="title" content={registerPage.title} />
+        <meta name="description" content={registerPage.description} />
+        <meta name="keywords" content={registerPage.keywords.join(", ")} />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:url" content={registerPage.url} />
+        <meta property="og:title" content={registerPage.title} />
+        <meta property="og:description" content={registerPage.description} />
+        <meta property="og:image" content={registerPage.image} />
+
+        {/* Twitter */}
+        <meta name="twitter:url" content={registerPage.url} />
+        <meta name="twitter:title" content={registerPage.title} />
+        <meta name="twitter:description" content={registerPage.description} />
+        <meta name="twitter:image" content={registerPage.image} />
+      </Helmet>
+      <DefaultLayout>
+        <div className="flex flex-col items-center justify-center min-h-screen p-4">
           <motion.div
-            className="bg-white dark:bg-trinup-dark dark:border-2 dark:border-trinup-light shadow-xl py-6 px-12 rounded-lg"
-            layout
-            transition={{
-              duration: 0.5,
-              type: "spring",
-              stiffness: 100,
-              damping: 20,
-            }}
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
           >
-            <motion.h1
-              className="text-3xl font-bold text-center mb-10 text-trinup-dark dark:text-white"
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              transition={{ type: "spring", stiffness: 200, damping: 10 }}
+            <motion.div
+              className="bg-white dark:bg-trinup-dark dark:border-2 dark:border-trinup-light shadow-xl py-6 px-12 rounded-lg"
+              layout
+              transition={{
+                duration: 0.5,
+                type: "spring",
+                stiffness: 100,
+                damping: 20,
+              }}
             >
-              Registrarse como:
-            </motion.h1>
-
-            {formStep === 1 && (
-              <div className="flex items-center justify-center mb-6">
-                <button
-                  onClick={() => setActiveTab("customer")}
-                  className={`px-6 py-2 text-sm font-semibold transition-all duration-300 border-2 ${
-                    activeTab === "customer"
-                      ? "bg-trinup-green text-white border-trinup-green font-extrabold"
-                      : "bg-transparent text-gray-700 dark:text-gray-300 border-trinup-green hover:bg-gray-100 dark:hover:bg-gray-800 font-extrabold"
-                  } rounded-l-lg`}
-                >
-                  Cliente
-                </button>
-                <button
-                  onClick={() => setActiveTab("company")}
-                  className={`px-6 py-2 text-sm font-semibold transition-all duration-300 border-2 ${
-                    activeTab === "company"
-                      ? "bg-trinup-green text-white border-trinup-green font-extrabold"
-                      : "bg-transparent text-gray-700 dark:text-gray-300 border-trinup-green hover:bg-gray-100 dark:hover:bg-gray-800 font-extrabold"
-                  } rounded-r-lg`}
-                >
-                  Empresa
-                </button>
-              </div>
-            )}
-
-            <form className="space-y-8 w-full max-w-lg mx-auto">
-              {renderFormContent()}
-
-              <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.5 }}
-                className={`flex ${formStep === 1 ? "justify-center" : "justify-between"} w-full`}
+              <motion.h1
+                className="text-3xl font-bold text-center mb-10 text-trinup-dark dark:text-white"
+                initial={{ scale: 0.9 }}
+                animate={{ scale: 1 }}
+                transition={{ type: "spring", stiffness: 200, damping: 10 }}
               >
-                {formStep > 1 && (
-                  <Button
-                    onClick={handleBack}
-                    color="success"
-                    className="w-1/2 mr-2 py-3 bg-trinup-green"
-                    startContent={<ArrowLeft size={16} />}
-                  >
-                    Volver
-                  </Button>
-                )}
-                {formStep === 1 ? (
-                  <Button
-                    onClick={handleContinue}
-                    color="success"
-                    className="py-3 bg-trinup-green"
-                    endContent={<ArrowRight size={16} />}
-                  >
-                    Continuar
-                  </Button>
-                ) : (
-                  <Button
-                    onClick={handleFinalizar}
-                    color="success"
-                    className="w-1/2 ml-2 py-3 bg-trinup-green"
-                    endContent={<ArrowRight size={16} />}
-                  >
-                    Finalizar
-                  </Button>
-                )}
-              </motion.div>
+                Registrarse como:
+              </motion.h1>
 
-              <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4 }}
-                className="flex items-center justify-center mt-4"
-              >
-                <Link
-                  href="/login"
-                  className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 border-2 border-gray-300 rounded-lg hover:bg-gray-300 hover:border-gray-400 dark:text-gray-200 dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700 transition-all duration-300"
+              {formStep === 1 && (
+                <div className="flex items-center justify-center mb-6">
+                  <button
+                    onClick={() => setActiveTab("customer")}
+                    className={`px-6 py-2 text-sm font-semibold transition-all duration-300 border-2 ${
+                      activeTab === "customer"
+                        ? "bg-trinup-green text-white border-trinup-green font-extrabold"
+                        : "bg-transparent text-gray-700 dark:text-gray-300 border-trinup-green hover:bg-gray-100 dark:hover:bg-gray-800 font-extrabold"
+                    } rounded-l-lg`}
+                  >
+                    Cliente
+                  </button>
+                  <button
+                    onClick={() => setActiveTab("company")}
+                    className={`px-6 py-2 text-sm font-semibold transition-all duration-300 border-2 ${
+                      activeTab === "company"
+                        ? "bg-trinup-green text-white border-trinup-green font-extrabold"
+                        : "bg-transparent text-gray-700 dark:text-gray-300 border-trinup-green hover:bg-gray-100 dark:hover:bg-gray-800 font-extrabold"
+                    } rounded-r-lg`}
+                  >
+                    Empresa
+                  </button>
+                </div>
+              )}
+
+              <form className="space-y-8 w-full max-w-lg mx-auto">
+                {renderFormContent()}
+
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className={`flex ${formStep === 1 ? "justify-center" : "justify-between"} w-full`}
                 >
-                  ⬅ Regresar al Inicio de Sesión
-                </Link>
-              </motion.div>
-            </form>
+                  {formStep > 1 && (
+                    <Button
+                      onClick={handleBack}
+                      color="success"
+                      className="w-1/2 mr-2 py-3 bg-trinup-green"
+                      startContent={<ArrowLeft size={16} />}
+                    >
+                      Volver
+                    </Button>
+                  )}
+                  {formStep === 1 ? (
+                    <Button
+                      onClick={handleContinue}
+                      color="success"
+                      className="py-3 bg-trinup-green"
+                      endContent={<ArrowRight size={16} />}
+                    >
+                      Continuar
+                    </Button>
+                  ) : (
+                    <Button
+                      onClick={handleFinalizar}
+                      color="success"
+                      className="w-1/2 ml-2 py-3 bg-trinup-green"
+                      endContent={<ArrowRight size={16} />}
+                    >
+                      Finalizar
+                    </Button>
+                  )}
+                </motion.div>
+
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                  className="flex items-center justify-center mt-4"
+                >
+                  <Link
+                    href="/login"
+                    className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 border-2 border-gray-300 rounded-lg hover:bg-gray-300 hover:border-gray-400 dark:text-gray-200 dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700 transition-all duration-300"
+                  >
+                    ⬅ Regresar al Inicio de Sesión
+                  </Link>
+                </motion.div>
+              </form>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      </div>
-    </DefaultLayout>
+        </div>
+      </DefaultLayout>
+    </>
   );
 }
