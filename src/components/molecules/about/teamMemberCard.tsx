@@ -17,9 +17,11 @@ export const TeamMemberCard = ({ member }: { member: TeamMember }) => {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
-      transition={{ type: "spring", stiffness: 300, damping: 10 }}
+      transition={{ duration: 0.3 }}
     >
-      <Card className="max-w-xs dark:bg-trinup-dark dark:border-2 dark:border-trinup-light">
+      <Card 
+        className={`sm:max-w-sm sm:h-[440px] md:h-[380px] dark:bg-trinup-dark ${member.subordinates?.length ? "border-trinup-yellow border-3" : "dark:border-2 dark:border-trinup-light"}`}
+      >
         <CardBody className="overflow-visible p-0">
           <div className="relative w-full h-[150px] flex items-center justify-center">
             <Avatar
