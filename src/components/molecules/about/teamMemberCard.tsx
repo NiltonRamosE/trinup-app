@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardBody, CardFooter, Avatar, Button } from "@nextui-org/react";
-import { Linkedin, Mail } from "lucide-react";
+import { GithubIcon, LinkedinIcon } from "@/components/atoms/icons"
+import { Mail, Globe} from "lucide-react";
 import { TeamMember } from "@/lib/types/models/teamMember";
 
 
@@ -46,7 +47,7 @@ export const TeamMemberCard = ({ member }: { member: TeamMember }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Linkedin className="text-trinup-green text-primary" />
+              <LinkedinIcon className="text-trinup-green text-primary mb-1" />
             </Button>
             <Button
               isIconOnly
@@ -57,6 +58,32 @@ export const TeamMemberCard = ({ member }: { member: TeamMember }) => {
             >
               <Mail className="text-trinup-green text-primary" />
             </Button>
+            {member.github && (
+              <Button
+                isIconOnly
+                size="sm"
+                variant="light"
+                as="a"
+                href={member.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GithubIcon className="text-trinup-green text-primary" />
+              </Button>
+            )}
+            {member.portfolio && (
+              <Button
+                isIconOnly
+                size="sm"
+                variant="light"
+                as="a"
+                href={member.portfolio}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Globe className="text-trinup-green text-primary" />
+              </Button>
+            )}
           </div>
         </CardFooter>
       </Card>
