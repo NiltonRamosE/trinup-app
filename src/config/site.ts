@@ -4,8 +4,8 @@ export const siteConfig = {
     "TrinUp es un app donde toda persona merece o puede mejorar su estilo de vida.",
   navItems: [
     {
-      label: "Precios",
-      href: "/precios",
+      label: "Tienda",
+      href: "/tienda",
     },
     {
       label: "Blog",
@@ -15,37 +15,47 @@ export const siteConfig = {
       label: "Nosotros",
       href: "/nosotros",
     },
-  ],
-  healthTools: [
     {
-      label: "Calculadora IMC",
-      href: "/calculadoraIMC",
-    },
-    {
-      label: "Ingesta de Agua",
-      href: "/calculadoraIA",
+      label: "Herramientas",
+      href: "#",
+      itemsDropdown: [
+        {
+          label: "Calculadora IMC",
+          href: "/calculadoraIMC",
+        },
+        {
+          label: "Ingesta de Agua",
+          href: "/calculadoraIA",
+        },
+      ],
     },
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: "Tienda",
+      href: "/tienda",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "Blog",
+      href: "/blog",
     },
     {
-      label: "Settings",
-      href: "/settings",
+      label: "Nosotros",
+      href: "/nosotros",
     },
     {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
+      label: "Herramientas",
+      href: "#",
+      itemsDropdown: [
+        {
+          label: "Calculadora IMC",
+          href: "/calculadoraIMC",
+        },
+        {
+          label: "Ingesta de Agua",
+          href: "/calculadoraIA",
+        },
+      ],
     },
   ],
   links: {
