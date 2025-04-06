@@ -59,7 +59,7 @@ export default function Navbar() {
           >
             <img
               alt="TrinUp Logo"
-              className="w-auto lg:h-10 h-10 sm:h-8 lg:ml-10"
+              className="w-auto h-10 sm:h-8 lg:h-10 lg:ml-10"
               src="images/logo_text_green.webp"
             />
           </Link>
@@ -67,52 +67,50 @@ export default function Navbar() {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
-        {siteConfig.navItems.map((item) =>
-          item.label === "Calculadora IMC" || item.label === "Ingesta de Agua" ? null : (
-            <NavbarItem key={item.href}>
-              <Link
-                className="lg:mr-10 mr-10 sm:mr-4 font-bold text-lg transition-colors duration-200 hover:text-[#1D9A4F] dark:text-white"
-                color="foreground"
-                href={item.href}
+        {siteConfig.navItems.map((item) => (
+            item.itemsDropdown ? (
+              <NavbarItem
+              onMouseEnter={() => setIsDropdownOpen(true)}
+              onMouseLeave={() => setIsDropdownOpen(false)}
               >
-                {item.label}
-              </Link>
-            </NavbarItem>
-          )
-        )}
-
-        {/* Desplegable de herramientas de salud */}
-        <NavbarItem
-          onMouseEnter={() => setIsDropdownOpen(true)}
-          onMouseLeave={() => setIsDropdownOpen(false)}
-        >
-          <Dropdown isOpen={isDropdownOpen}>
-            <DropdownTrigger>
-              <Link
-                className="lg:mr-10 mr-10 sm:mr-4 font-bold text-lg transition-colors duration-200 hover:text-[#1D9A4F] dark:text-white cursor-pointer"
-                color="foreground"
+              <Dropdown 
+                isOpen={isDropdownOpen}
+                className="rounded-none mt-3 bg-white/80 dark:bg-[#222]/85 backdrop-blur-2xl shadow-md dark:shadow-lg border-gray-200 dark:border-gray-400/20"
               >
-                Herramientas
-              </Link>
-            </DropdownTrigger>
-            <DropdownMenu
-              aria-label="Herramientas de salud"
-              className="dark:bg-[#222] bg-white"
-            >
-              <DropdownItem key="/calculadoraIMC">
-                <Link href="/calculadoraIMC" className="dark:text-white text-black">
-                  Calculadora IMC
+                <DropdownTrigger>
+                  <Link
+                    className="lg:mr-10 mr-10 sm:mr-4 font-bold text-lg transition-colors hover:text-primary"
+                    color="foreground"
+                    href={item.href}
+                  >
+                    {item.label}
+                  </Link>
+                </DropdownTrigger>
+                <DropdownMenu
+                  aria-label={item.label}
+                  items={item.itemsDropdown}
+                >
+                  {item.itemsDropdown.map((dropdownItem) => (
+                    <DropdownItem key={dropdownItem.href} href={dropdownItem.href}>
+                      {dropdownItem.label}
+                    </DropdownItem>
+                  ))}
+                </DropdownMenu>
+              </Dropdown>
+              </NavbarItem>
+              
+            ) : (
+              <NavbarItem key={item.href}>
+                <Link
+                  className="lg:mr-10 mr-10 sm:mr-4 font-bold text-lg transition-colors hover:text-primary"
+                  color="foreground"
+                  href={item.href}
+                >
+                  {item.label}
                 </Link>
-              </DropdownItem>
-              <DropdownItem key="/calculadoraIA">
-                <Link href="/calculadoraIA" className="dark:text-white text-black">
-                  Ingesta de Agua
-                </Link>
-              </DropdownItem>
-            </DropdownMenu>
-          </Dropdown>
-        </NavbarItem>
-
+              </NavbarItem>
+            )
+        ))}
         <NavbarItem>
           <Button
             as={Link}
@@ -129,27 +127,74 @@ export default function Navbar() {
         </NavbarItem>
       </NavbarContent>
 
+      <NavbarContent className="block sm:hidden" justify="end">
+        <NavbarItem className="mt-5 ml-48">
+          <ThemeSwitch />
+        </NavbarItem>
+      </NavbarContent>
       <NavbarMenu>
-        <div className="mx-4 mt-2 flex flex-col gap-2">
-          {siteConfig.navItems.map((item, index) =>
-            item.label === "Calculadora IMC" || item.label === "Ingesta de Agua" ? (
-              <NavbarMenuItem key={`${item}-${index}`}>
+        <div className="mx-4 mt-2 flex flex-col gap-4">
+          {siteConfig.navMenuItems.map((item, index) => (
+            <NavbarMenuItem key={`${item}-${index}`}>
+              {item.itemsDropdown ? (
+                <div className="relative">
                 <Link
-                  className="w-full dark:text-white text-black"
+                  className="text-lg transition-colors"
+                  color="foreground"
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const menu = e.currentTarget.nextElementSibling;
+                    if (menu) {
+                      menu.classList.toggle('hidden');
+                    }
+                  }}
+                >
+                  {item.label}
+                  <svg
+                    className="w-4 h-4 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </Link>
+                <div className="hidden mt-2 w-full">
+                  {item.itemsDropdown.map((dropdownItem) => (
+                    <Link
+                      key={dropdownItem.href}
+                      className="block px-6 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                      href={dropdownItem.href}
+                    >
+                      {dropdownItem.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              ) : (
+                <Link
+                  className="w-full"
                   color="foreground"
                   href={item.href}
                   size="lg"
                 >
                   {item.label}
                 </Link>
-              </NavbarMenuItem>
-            ) : null
-          )}
+              )}
+            </NavbarMenuItem>
+          ))}
         </div>
         <NavbarItem>
           <Button
             as={Link}
-            className="font-black text-xs bg-trinup-dark text-white dark:bg-trinup-light dark:text-trinup-dark"
+            className="font-black mt-4 ml-4 text-xs bg-trinup-dark text-white dark:bg-trinup-light dark:text-trinup-dark"
             color="primary"
             href="/login"
             variant="flat"
