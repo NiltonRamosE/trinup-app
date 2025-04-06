@@ -46,29 +46,62 @@ export const FilterTeamMember = () => {
   
         <div className="w-full">
           {activeFilter === "executives" && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full place-items-center"
-            >
-              {executives.map((member, index) => (
-                <TeamMemberCard key={`executives-${index}`} member={member} />
-              ))}
-            </motion.div>
+            <>
+              {executives
+                .filter((member) => member.id === "AAVL1")
+                .map((member, index) => (
+                  <motion.div
+                    key={`executives-single-${index}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                    className="grid grid-cols-1 mb-10 w-full place-items-center"
+                  >
+                    <TeamMemberCard member={member} />
+                  </motion.div>
+                ))}
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full place-items-center"
+              >
+                {executives
+                  .filter((member) => member.id !== "AAVL1")
+                  .map((member, index) => (
+                    <TeamMemberCard key={`executives-${index}`} member={member} />
+                  ))}
+              </motion.div>
+            </>
           )}
   
           {activeFilter === "developers" && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full place-items-center"
-            >
-              {developers.map((member, index) => (
-                <TeamMemberCard key={`developers-${index}`} member={member} />
-              ))}
-            </motion.div>
+            <>
+              {executives
+                .filter((member) => member.id === "NRE2")
+                .map((member, index) => (
+                  <motion.div
+                    key={`executives-single-${index}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                    className="grid grid-cols-1 mb-10 w-full place-items-center"
+                  >
+                    <TeamMemberCard member={member} />
+                  </motion.div>
+                ))}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full place-items-center"
+              >
+                {developers.map((member, index) => (
+                  <TeamMemberCard key={`developers-${index}`} member={member} />
+                ))}
+              </motion.div>
+            </>
           )}
   
           {activeFilter === "mentors" && (
