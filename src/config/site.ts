@@ -25,7 +25,7 @@ export const siteConfig = {
         },
         {
           label: "Ingesta de Agua",
-          href: "/calculadoraIA",
+          href: "/calculadoraIngestaAgua",
         },
       ],
     },
@@ -53,7 +53,7 @@ export const siteConfig = {
         },
         {
           label: "Ingesta de Agua",
-          href: "/calculadoraIA",
+          href: "/calculadoraIngestaAgua",
         },
       ],
     },

@@ -1,38 +1,35 @@
 import React from "react";
-import { getRangoIMC, getClasificacion, getBackgroundClass } from "@/lib/constants/calculadoraIMC/imcUtils"
+import { getBMIRange, getClassification, getBackgroundClass } from "@/lib/utils/bmi"
 
-interface ColumnaIMCProps {
+interface BMIColumnProps {
   index: number;
-  imc: number;
-  riesgo: string;
-  getIMCIndex: (imc: number) => number;
+  bmi: number;
+  risk: string;
+  getBMIClassificationPosition: (bmi: number) => number;
   getBorderClass: (index: number, rowType: string) => string;
 }
 
-const ColumnaIMC: React.FC<ColumnaIMCProps> = ({ index, imc, riesgo, getIMCIndex, getBorderClass }) => {
+const BMIColumn: React.FC<BMIColumnProps> = ({ index, bmi, risk, getBMIClassificationPosition, getBorderClass }) => {
   return (
     <div className="flex flex-col justify-center text-center text-xs">
-      {/* Marcador */}
+
       <div className="flex justify-center font-semibold text-trinup-green pb-4">
-        {getIMCIndex(imc) === index && "Tu clasificación de IMC"}
+        {getBMIClassificationPosition(bmi) === index && "Tu clasificación de IMC"}
       </div>
 
-      {/* Rango de IMC */}
       <div className={`flex justify-center font-semibold p-4 items-center ${getBorderClass(index, "header")}`}>
-        {getRangoIMC(index)}
+        {getBMIRange(index)}
       </div>
 
-      {/* Clasificación */}
       <div className={`flex justify-center sm:font-semibold h-24 items-center text-trinup-dark ${getBackgroundClass(index)} ${getBorderClass(index, "classification")}`}>
-        {getClasificacion(index)}
+        {getClassification(index)}
       </div>
 
-      {/* Riesgo */}
       <div className={`flex justify-center font-semibold text-trinup-green p-4 items-center ${getBorderClass(index, "risk")}`}>
-        {getIMCIndex(imc) === index && riesgo}
+        {getBMIClassificationPosition(bmi) === index && risk}
       </div>
     </div>
   );
 };
 
-export default ColumnaIMC;
+export default BMIColumn;
