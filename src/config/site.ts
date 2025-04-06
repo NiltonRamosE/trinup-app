@@ -4,8 +4,8 @@ export const siteConfig = {
     "TrinUp es un app donde toda persona merece o puede mejorar su estilo de vida.",
   navItems: [
     {
-      label: "Precios",
-      href: "/precios",
+      label: "Tienda",
+      href: "/tienda",
     },
     {
       label: "Blog",
@@ -32,8 +32,8 @@ export const siteConfig = {
   ],
   navMenuItems: [
     {
-      label: "Precios",
-      href: "/precios",
+      label: "Tienda",
+      href: "/tienda",
     },
     {
       label: "Blog",

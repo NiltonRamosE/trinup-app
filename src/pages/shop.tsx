@@ -1,12 +1,12 @@
 import { title } from "@/components/primitives";
 import DefaultLayout from "@/components/templates/default";
 
-export default function DocsPage() {
+export default function ShopPage() {
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
         <div className="inline-block max-w-lg text-center justify-center">
-          <h1 className={title()}>Precios</h1>
+          <h1 className={title()}>Tienda</h1>
         </div>
       </section>
     </DefaultLayout>
