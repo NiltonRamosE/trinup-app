@@ -17,8 +17,8 @@ export const FilterTeamMember = () => {
           transition={{ duration: 0.5 }}
         >
           {[
-            { id: "executives", label: "Equipo Ejecutivo" },
-            { id: "developers", label: "Equipo Desarrollador" },
+            { id: "executives", label: "Ejecutivos" },
+            { id: "developers", label: "Desarrolladores" },
             { id: "mentors", label: "Mentores" },
           ].map((filter) => (
             <motion.div
@@ -31,7 +31,7 @@ export const FilterTeamMember = () => {
                 size="lg"
                 variant={activeFilter === filter.id ? "solid" : "bordered"}
                 color="success"
-                className={`font-bold text-lg transition-all duration-300 ${
+                className={`font-bold text-lg transition-all duration-300 w-[300px] 2xl:w-[400px] ${
                   activeFilter === filter.id
                     ? "bg-trinup-green text-white shadow-lg shadow-trinup-green/30"
                     : "border-trinup-green text-trinup-green hover:bg-trinup-green/10"
