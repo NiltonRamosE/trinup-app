@@ -104,3 +104,21 @@ export const registerPage: SEOFields = {
   url: "https://trinup-app.vercel.app/register",
   image: "https://trinup-app.vercel.app/images/logo.webp",
 };
+
+export const bmiCalculatorPage: SEOFields = {
+  title: "Calculadora IMC - TrinUp",
+  description:
+    "Calcula tu Índice de Masa Corporal (IMC) con TrinUp y evalúa tu salud. Una herramienta esencial para medir tu bienestar físico y tomar decisiones informadas.",
+  keywords: [
+    "calculadora IMC",
+    "Índice de Masa Corporal",
+    "IMC TrinUp",
+    "salud",
+    "bienestar",
+    "nutrición",
+    "salud y fitness",
+    "TrinUp",
+  ],
+  url: "https://trinup-app.vercel.app/calculadoraIMC",
+  image: "https://trinup-app.vercel.app/images/logo.webp",
+};
