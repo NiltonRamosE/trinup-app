@@ -122,3 +122,21 @@ export const bmiCalculatorPage: SEOFields = {
   url: "https://trinup-app.vercel.app/calculadoraIMC",
   image: "https://trinup-app.vercel.app/images/logo.webp",
 };
+
+export const waterIntakeCalculatorPage: SEOFields = {
+  title: "Calculadora de Ingesta de Agua - TrinUp",
+  description:
+    "Calcula la cantidad de agua que necesitas consumir diariamente con TrinUp. Mantén tu cuerpo hidratado y mejora tu salud y bienestar con esta herramienta práctica.",
+  keywords: [
+    "calculadora de agua",
+    "ingesta de agua",
+    "hidratación",
+    "salud",
+    "bienestar",
+    "nutrición",
+    "TrinUp",
+    "agua saludable",
+  ],
+  url: "https://trinup-app.vercel.app/calculadoraIngestaAgua",
+  image: "https://trinup-app.vercel.app/images/logo.webp",
+};
