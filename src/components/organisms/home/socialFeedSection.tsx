@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { SocialPost, Post } from "@/components/molecules/home/socialPost";
+import { LiteYoutubePlayer } from "@/components/atoms/liteYoutubePlayer";
 
 const posts: Post[] = [
   {
@@ -110,18 +111,12 @@ export default function SocialFeedSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="h-[500px] w-[600px] max-w-[100%] mt-6"
+          className="h-auto w-[600px] max-w-[100%] mt-8 lg:mt-0"
         >
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/uz3-qLYbIX0"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="w-full"
-          ></iframe>
+          <LiteYoutubePlayer
+            videoId="uz3-qLYbIX0"
+            videoTitle="Ministerio de salud"
+          ></LiteYoutubePlayer>
         </motion.div>
       </div>
     </motion.section>
