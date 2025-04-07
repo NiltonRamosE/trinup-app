@@ -65,7 +65,7 @@ export default function PartnersSection() {
         <div className=" flex items-center flex-col md:flex-row gap-16 w-full justify-between mb-8">
           <motion.div
             key={0}
-            className="flex py-[45px] flex-col items-center w-[400px] py-6 px-2 bg-white dark:bg-trinup-dark dark:border-2 dark:border-trinup-light rounded-lg shadow-lg"
+            className="flex py-[45px] flex-col items-center w-[400px] py-6 px-2 bg-white dark:bg-white dark:border-2 dark:border-trinup-light rounded-lg shadow-lg"
             whileHover={{
               scale: 1.05,
               boxShadow:
@@ -74,16 +74,16 @@ export default function PartnersSection() {
             whileTap={{ scale: 0.95 }}
           >
             <Apple className="w-12 h-12 text-trinup-green mb-4" />
-            <h3 className="text-xl mb-2 text-trinup-dark dark:text-white font-bold">
+            <h3 className="text-xl mb-2 text-trinup-dark font-bold">
               {"Nutrición Personalizada"}
             </h3>
-            <p className="text-center text-gray-600 dark:text-gray-300 font-bold text-sm">
+            <p className="text-center text-gray-600 font-bold text-sm">
               {"Planes adaptados a tus necesidades"}
             </p>
           </motion.div>
           <motion.div
             key={2}
-            className="flex py-[45px] flex-col items-center w-[400px] py-6 px-2 bg-white dark:bg-trinup-dark dark:border-2 dark:border-trinup-light rounded-lg shadow-lg"
+            className="flex py-[45px] flex-col items-center w-[400px] py-6 px-2 bg-white dark:bg-white dark:border-2 dark:border-trinup-light rounded-lg shadow-lg"
             whileHover={{
               scale: 1.05,
               boxShadow:
@@ -92,19 +92,18 @@ export default function PartnersSection() {
             whileTap={{ scale: 0.95 }}
           >
             <Heart className="w-12 h-12 text-trinup-green mb-4" />
-            <h3 className="text-xl mb-2 text-trinup-dark dark:text-white font-bold">
+            <h3 className="text-xl mb-2 text-trinup-dark font-bold">
               {"Apoyo Profesional"}
             </h3>
-            <p className="text-center text-gray-600 dark:text-gray-300 font-bold text-sm">
+            <p className="text-center text-gray-600 font-bold text-sm">
               {"Expertos dedicados a tu bienestar"}
             </p>
           </motion.div>
         </div>
-
         <div className="flex justify-center">
           <motion.div
             key={1}
-            className="flex flex-col py-[45px] w-[400px] items-center py-6 px-2 bg-white dark:bg-trinup-dark dark:border-2 dark:border-trinup-light rounded-lg shadow-lg"
+            className="flex flex-col py-[45px] w-[400px] items-center py-6 px-2 bg-white dark:bg-white dark:border-2 dark:border-trinup-light rounded-lg shadow-lg"
             whileHover={{
               scale: 1.05,
               boxShadow:
@@ -113,10 +112,10 @@ export default function PartnersSection() {
             whileTap={{ scale: 0.95 }}
           >
             <Leaf className="w-12 h-12 text-trinup-green mb-4" />
-            <h3 className="text-xl mb-2 text-trinup-dark dark:text-white font-bold">
+            <h3 className="text-xl mb-2 text-trinup-dark font-bold">
               {"Vida Sostenible"}
             </h3>
-            <p className="text-center text-gray-600 dark:text-gray-300 font-bold text-sm">
+            <p className="text-center text-gray-600 font-bold text-sm">
               {"Aprende a vivir en armonía"}
             </p>
           </motion.div>

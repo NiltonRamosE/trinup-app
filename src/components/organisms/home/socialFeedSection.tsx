@@ -60,7 +60,7 @@ export default function SocialFeedSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-lg shadow-lg mx-auto p-4 flex flex-col space-y-4 relative dark:border-2 dark:bg-background"
+              className="bg-white rounded-lg shadow-lg mx-auto p-4 flex flex-col space-y-4 relative dark:border-2"
             >
               <img
                 src="images/facebook.webp"
@@ -69,7 +69,7 @@ export default function SocialFeedSection() {
               />
 
               <div className="pl-16 pr-4">
-                <p className="text-gray-900 font-semibold text-base leading-relaxed dark:text-white">
+                <p className="text-gray-900 font-semibold text-base leading-relaxed">
                   TRINUP hace que cuidar mi salud sea accesible y sencillo.
                   ¡Totalmente recomendado!
                 </p>
@@ -79,7 +79,7 @@ export default function SocialFeedSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-lg shadow-lg mx-auto p-4 flex flex-col space-y-4 relative dark:border-2 dark:bg-background"
+              className="bg-white rounded-lg shadow-lg mx-auto p-4 flex flex-col space-y-4 relative dark:border-2"
             >
               <img
                 src="images/facebook.webp"
@@ -88,7 +88,7 @@ export default function SocialFeedSection() {
               />
 
               <div className="pl-16 pr-4">
-                <p className="text-gray-900 font-semibold text-base leading-relaxed dark:text-white">
+                <p className="text-gray-900 font-semibold text-base leading-relaxed">
                   TRINUP es la forma más fácil de comer saludable! Productos
                   frescos y adaptados a mí
                 </p>
@@ -111,7 +111,7 @@ export default function SocialFeedSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="h-auto w-[600px] max-w-[100%] mt-8 lg:mt-0"
+          className="flex justify-center  w-[600px] max-w-[100%] mt-8 lg:mt-0"
         >
           <LiteYoutubePlayer
             videoId="uz3-qLYbIX0"

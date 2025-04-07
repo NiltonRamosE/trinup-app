@@ -18,13 +18,13 @@ export const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4 dark:light">
       <Input
         label="Nombre"
         placeholder="Tu nombre"
         value={name}
         onChange={(e) => setName(e.target.value)}
-        className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4"
+        className="w-full rounded-xl font-extrabold mb-4 border-1"
         required
       />
       <Input
@@ -33,7 +33,7 @@ export const ContactForm = () => {
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4"
+        className="w-full rounded-xl font-extrabold mb-4"
         required
       />
       <Textarea
@@ -41,14 +41,14 @@ export const ContactForm = () => {
         placeholder="¿En qué podemos ayudarte?"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
-        className="w-full border-2 border-trinup-green rounded-xl font-extrabold mb-4"
+        className="w-full rounded-xl font-extrabold mb-4"
         required
       />
       <Button
         type="submit"
         color="success"
         endContent={<Send size={16} />}
-        className="w-full"
+        className="w-full font-bold text-white bg-[#1c7fef] py-[22px]"
       >
         Enviar Mensaje
       </Button>

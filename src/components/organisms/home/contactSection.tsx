@@ -33,16 +33,15 @@ export default function ContactSection() {
           antes posible.
         </motion.p>
       </motion.div>
-
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-8 p-4 lg:p-8">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-8 p-4 lg:p-8 w-full justify-between">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="w-full lg:w-1/2"
+          className="w-full lg:w-1/2 max-w-[600px]"
         >
-          <Card className="p-6 bg-white dark:bg-trinup-dark dark:border-2 dark:border-trinup-light">
-            <h2 className="text-2xl font-bold mb-4 text-center">Contáctanos</h2>
+          <Card className="p-6 bg-white dark:bg-white dark:text-black dark:border-2 dark:border-trinup-light">
+            <h2 className="text-2xl font-extrabold mb-4 text-center">Contáctanos</h2>
             <ContactForm />
           </Card>
         </motion.div>
@@ -50,12 +49,12 @@ export default function ContactSection() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-full lg:w-1/2"
+          className="h-[410px]"
         >
           <img
             src="https://images.pexels.com/photos/5676744/pexels-photo-5676744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="Equipo TrinUp listo para ayudarte"
-            className="rounded-lg shadow-lg object-cover w-full h-full max-h-[600px]"
+            className="rounded-sm shadow-lg object-cover w-full h-full max-h-[600px]"
           />
         </motion.div>
       </div>
