@@ -24,6 +24,8 @@ export default function ShopPage() {
         <meta name="twitter:title" content={shopPage.title} />
         <meta name="twitter:description" content={shopPage.description} />
         <meta name="twitter:image" content={shopPage.image} />
+
+        <link rel="canonical" href={shopPage.url}/>
       </Helmet>
       <DefaultLayout>
         <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">

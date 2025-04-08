@@ -119,6 +119,8 @@ export default function RegisterPage() {
         <meta name="twitter:title" content={registerPage.title} />
         <meta name="twitter:description" content={registerPage.description} />
         <meta name="twitter:image" content={registerPage.image} />
+
+        <link rel="canonical" href={registerPage.url}/>
       </Helmet>
       <DefaultLayout>
         <div className="flex flex-col items-center justify-center min-h-screen p-4">

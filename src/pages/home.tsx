@@ -30,6 +30,7 @@ export default function IndexPage() {
         <meta name="twitter:description" content={indexPage.description} />
         <meta name="twitter:image" content={indexPage.image} />
         
+        <link rel="canonical" href={indexPage.url}/>
         {/* Lite YouTube Embed - CDN */}
         <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
       </Helmet>

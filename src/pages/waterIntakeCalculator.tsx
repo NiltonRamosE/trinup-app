@@ -38,6 +38,8 @@ export default function WaterIntakeCalculatorPage() {
         <meta name="twitter:title" content={waterIntakeCalculatorPage.title} />
         <meta name="twitter:description" content={waterIntakeCalculatorPage.description} />
         <meta name="twitter:image" content={waterIntakeCalculatorPage.image} />
+
+        <link rel="canonical" href={waterIntakeCalculatorPage.url}/>
       </Helmet>
       <DefaultLayout>
         <section className="flex flex-col items-center justify-center gap-8 py-6 md:py-8 min-h-screen">

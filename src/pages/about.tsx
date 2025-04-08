@@ -27,6 +27,8 @@ export default function PaginaNosotros() {
         <meta name="twitter:title" content={aboutPage.title} />
         <meta name="twitter:description" content={aboutPage.description} />
         <meta name="twitter:image" content={aboutPage.image} />
+
+        <link rel="canonical" href={aboutPage.url}/>
       </Helmet>
       <DefaultLayout>
         <motion.section
