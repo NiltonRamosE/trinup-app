@@ -13,7 +13,7 @@ export const indexPage: SEOFields = {
     "superación personal",
   ],
   url: "https://trinup-app.vercel.app",
-  image: "https://trinup-app.vercel.app/images/logo.webp",
+  image: "https://trinup-app.vercel.app/images/logo-og.png",
 };
 
 export const shopPage: SEOFields = {
@@ -66,7 +66,7 @@ export const aboutPage: SEOFields = {
     "nutrición",
   ],
   url: "https://trinup-app.vercel.app/nosotros",
-  image: "https://trinup-app.vercel.app/images/logo.webp",
+  image: "https://trinup-app.vercel.app/images/logo-og.png",
 };
 
 export const loginPage: SEOFields = {
@@ -84,7 +84,7 @@ export const loginPage: SEOFields = {
     "bienestar personal",
   ],
   url: "https://trinup-app.vercel.app/login",
-  image: "https://trinup-app.vercel.app/images/logo.webp",
+  image: "https://trinup-app.vercel.app/images/logo-og.png",
 };
 
 export const registerPage: SEOFields = {
@@ -102,7 +102,7 @@ export const registerPage: SEOFields = {
     "TrinUp",
   ],
   url: "https://trinup-app.vercel.app/register",
-  image: "https://trinup-app.vercel.app/images/logo.webp",
+  image: "https://trinup-app.vercel.app/images/logo-og.png",
 };
 
 export const bmiCalculatorPage: SEOFields = {
@@ -120,7 +120,7 @@ export const bmiCalculatorPage: SEOFields = {
     "TrinUp",
   ],
   url: "https://trinup-app.vercel.app/calculadoraIMC",
-  image: "https://trinup-app.vercel.app/images/logo.webp",
+  image: "https://trinup-app.vercel.app/images/logo-og.png",
 };
 
 export const waterIntakeCalculatorPage: SEOFields = {
@@ -138,5 +138,5 @@ export const waterIntakeCalculatorPage: SEOFields = {
     "agua saludable",
   ],
   url: "https://trinup-app.vercel.app/calculadoraIngestaAgua",
-  image: "https://trinup-app.vercel.app/images/logo.webp",
+  image: "https://trinup-app.vercel.app/images/logo-og.png",
 };
