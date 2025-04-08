@@ -60,6 +60,8 @@ export default function BMICalculatorPage() {
         <meta name="twitter:title" content={bmiCalculatorPage.title} />
         <meta name="twitter:description" content={bmiCalculatorPage.description} />
         <meta name="twitter:image" content={bmiCalculatorPage.image} />
+
+        <link rel="canonical" href={bmiCalculatorPage.url}/>
       </Helmet>
       <DefaultLayout>
         <section className="flex flex-col items-center justify-center gap-8 py-6 md:py-8 min-h-screen">
