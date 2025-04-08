@@ -24,6 +24,8 @@ export default function BlogPage() {
         <meta name="twitter:title" content={blogPage.title} />
         <meta name="twitter:description" content={blogPage.description} />
         <meta name="twitter:image" content={blogPage.image} />
+
+        <link rel="canonical" href={blogPage.url}/>
       </Helmet>
       <DefaultLayout>
         <section className="flex flex-col items-center justify-center gap-4 py-6 md:py-8">
