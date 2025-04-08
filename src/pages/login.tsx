@@ -27,6 +27,8 @@ export default function LoginPage() {
         <meta name="twitter:title" content={loginPage.title} />
         <meta name="twitter:description" content={loginPage.description} />
         <meta name="twitter:image" content={loginPage.image} />
+
+        <link rel="canonical" href={loginPage.url}/>
       </Helmet>
       <DefaultLayout>
         <div className="flex flex-col items-center justify-center min-h-screen p-4">
