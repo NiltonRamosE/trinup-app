@@ -2,7 +2,7 @@
 
 import DefaultLayout from "@/components/templates/default";
 import SocialFeedSection from "@/components/organisms/home/socialFeedSection";
-import ContactSection from "@/components/organisms/home/contactSection";
+import MessageSection from "@/components/organisms/home/messageSection";
 import HeroSection from "@/components/organisms/home/heroSection";
 import PartnersSection from "@/components/organisms/home/partnersSection";
 import { Helmet } from 'react-helmet-async';
@@ -41,7 +41,8 @@ export default function IndexPage() {
 
         <SocialFeedSection />
 
-        <ContactSection />
+        <MessageSection />
+
 
       </DefaultLayout>
     </>
