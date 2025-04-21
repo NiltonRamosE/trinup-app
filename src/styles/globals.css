@@ -12,3 +12,20 @@
   backdrop-filter: none !important;
   background-color: transparent !important;
 }
+
+
+/* MENSAJES FLOTANTES INFINITOS */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  min-width: 200%;
+  animation: marquee 20s linear infinite;
+}

@@ -7,6 +7,7 @@ import HeroSection from "@/components/organisms/home/heroSection";
 import PartnersSection from "@/components/organisms/home/partnersSection";
 import { Helmet } from 'react-helmet-async';
 import { indexPage } from "@/lib/constants/seoPages"
+import FaqSection from "@/components/organisms/home/faqSection";
 
 export default function IndexPage() {
   return (
@@ -41,8 +42,9 @@ export default function IndexPage() {
 
         <SocialFeedSection />
 
-        <MessageSection />
+        <FaqSection />
 
+        <MessageSection />
 
       </DefaultLayout>
     </>
